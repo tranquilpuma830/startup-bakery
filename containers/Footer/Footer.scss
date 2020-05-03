@@ -1,0 +1,145 @@
+  @mixin flexType($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-around;
+  }
+
+  .footer {
+    padding: 10%;
+    clear: both;
+    position: relative;
+    height: 50%;
+    // margin-top: 100px;
+    padding: 3% 5%;
+    background-color: #FEE698;
+
+    p {
+      margin-top: 15px;
+    }
+
+    .container {
+      @include flexType(row);
+      flex-flow: wrap;
+      width: 90%;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+  }
+
+  .title {
+    font-size: 30px;
+    padding-left: 40px;
+    color: black;
+    font-weight: bold;
+  }
+
+  .country,
+  .language,
+  .social {
+    text-align: center;
+  }
+
+  .language__type {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .footer__content {
+    height: 20%;
+  }
+
+  .m-bold {
+    font-size: 15px;
+    margin: 5px 0px;
+  }
+
+  .list {
+    width: 100%;
+    list-style: none;
+
+    .list__item {
+      padding: 10px 0px;
+
+
+      a {
+        transition: 0.2s;
+        color: #FDB15D;
+        ;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: #DE6A1E;
+      }
+    }
+  }
+
+
+  @media (max-width: 900px) {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer__content {
+      flex: 0 42%;
+      height: 250px;
+      margin-bottom: 2%;
+    }
+
+    .social,
+    .country,
+    .language {
+      text-align: left;
+    }
+
+    .country__flag {
+      margin: 20px 20px 0px 0px;
+    }
+
+    .language__type:nth-child(3) {
+      padding-left: 20px;
+    }
+
+    .language__type {
+      margin: 20px 0px;
+      padding: 0px;
+      padding-right: 20px;
+    }
+
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 10%;
+
+      .container {
+        @include flexType(column);
+      }
+    }
+
+    .social,
+    .country,
+    .language {
+      text-align: left;
+    }
+
+    .country__flag {
+      margin: 20px 20px 0px 0px;
+    }
+
+    .language__type:nth-child(3) {
+      padding-left: 20px;
+    }
+
+    .language__type {
+      margin: 20px 0px;
+      padding: 0px;
+      padding-right: 20px;
+    }
+  }

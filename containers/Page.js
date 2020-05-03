@@ -1,14 +1,16 @@
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import LeftMenu from "./Menu/LeftMenu";
+import Footer from "../containers/Footer/Footer";
+import Navbar from "./Header/Header";
 
-const { Header, Footer, Content } = Layout;
+const { Content } = Layout;
 
 export default function Page(props) {
   return (
     <div>
       <Layout>
-        <Header>Header</Header>
+        <Navbar />
         <Row>
           <Col span={4}>
             <LeftMenu />
@@ -17,7 +19,7 @@ export default function Page(props) {
             <Content>{props.children}</Content>
           </Col>
         </Row>
-        <Footer>Footer</Footer>
+        <Footer />
       </Layout>
     </div>
   );

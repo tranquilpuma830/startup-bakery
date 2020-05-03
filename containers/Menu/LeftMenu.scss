@@ -1,9 +1,20 @@
 .menu {
-  padding: 20px 0px;
+  border-right: 1px solid #FEE698;
+  height: 300px;
 }
 
 .menu__item {
+  color: #DE6A1E;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-bottom: 1px solid #FEE698;
+}
+
+.menu__item:hover {
+  color: #FDB15D;
+}
+
+.menu__item .active {
+  background: red;
 }

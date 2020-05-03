@@ -1,21 +1,29 @@
 import React from "react";
 import { Menu } from "antd";
+import Bakery from "../../assets/Icons/Bakery";
+import Degustation from "../../assets/Icons/Degustation";
+import MenuIcons from "../../assets/Icons/MenuIcons";
+import Bets from "../../assets/Icons/Bets";
+
 import "./LeftMenu.scss";
 
 const LeftMenu = () => {
   return (
     <Menu className="menu" mode="vertical">
       <Menu.Item className="menu__item" key="1">
-        Menu
+        <MenuIcons /> Меню
       </Menu.Item>
       <Menu.Item className="menu__item" key="2">
-        Bakery
+        <Bakery />
+        Пекарня
       </Menu.Item>
       <Menu.Item className="menu__item" key="3">
-        Degustation
+        <Degustation />
+        Дегустация
       </Menu.Item>
       <Menu.Item className="menu__item" key="4">
-        Bets
+        <Bets />
+        Аукцион
       </Menu.Item>
     </Menu>
   );
