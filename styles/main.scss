@@ -26,7 +26,8 @@
 }
 
 .bg-filled,
-.bg-half-filled {
+.bg-half-filled,
+.bg-half {
   background: no-repeat !important;
   background-size: cover !important;
 }
@@ -35,6 +36,9 @@
 }
 .bg-half-filled {
   background-image: url('/backgrounds/background-half-filled.svg') !important;
+}
+.bg-half {
+  background-image: url('/backgrounds/background-half.svg') !important;
 }
 
 .shape-background {

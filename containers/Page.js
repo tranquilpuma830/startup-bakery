@@ -5,7 +5,7 @@ const { Header, Footer, Content } = Layout;
 
 export default function Page(props) {
   return (
-    <Layout className='h-100'>
+    <Layout>
       <Header>Header</Header>
       <Content>{props.children}</Content>
       <Footer>Footer</Footer>
