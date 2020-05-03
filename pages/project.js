@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Layout, Tabs, Divider, Button } from "antd";
+import Page from "../containers/Page";
 
 const PROJECT_OVERVEIW = [
   {
@@ -33,85 +34,99 @@ const PROJECT_OVERVEIW = [
   },
 ];
 
+const PROJECT_DATA = {
+  title: "Joué Play - Everyone can play music",
+  subtitle:
+    "make a beat, play a melody and build chords naturally on a digital yet expressive music instrument.",
+  cover_img:
+    "https://ksr-ugc.imgix.net/assets/028/891/063/7728109c7056da046134bed4de4ca578_original.jpg?ixlib=rb-2.1.0&w=680&fit=max&v=1588138264&auto=format&frame=1&q=92&s=11ed4fa59a43dc1da233e5b706e8ff24",
+  overview: PROJECT_OVERVEIW,
+};
+
 const Project = () => {
   const [defaultTab, setDefaultTab] = useState("1");
   return (
-    <div className="container">
-      <div className="text-center">
-        <Layout.Content>
-          <Typography.Title className="mt-5">
-            Joué Play - Everyone can play music
-          </Typography.Title>
-          <Typography.Text>
-            make a beat, play a melody and build chords naturally on a digital
-            yet expressive music instrument.
-          </Typography.Text>
+    <Page>
+      <div className="container">
+        <div className="text-center">
+          <Layout.Content>
+            <Typography.Title className="mt-5">
+              {PROJECT_DATA.title}
+            </Typography.Title>
+            <Typography.Text>{PROJECT_DATA.subtitle}</Typography.Text>
 
-          <div className="m-5">
-            <div>
-              <img src="https://ksr-ugc.imgix.net/assets/028/891/063/7728109c7056da046134bed4de4ca578_original.jpg?ixlib=rb-2.1.0&w=680&fit=max&v=1588138264&auto=format&frame=1&q=92&s=11ed4fa59a43dc1da233e5b706e8ff24" />
-            </div>
-          </div>
-
-          <Tabs
-            defaultActiveKey={defaultTab}
-            activeKey={defaultTab}
-            onChange={setDefaultTab}
-          >
-            <Tabs.TabPane tab="Overview" key="1">
-              <div className="w-50 m-auto text-left">
-                <Typography.Title level={3}>Overview</Typography.Title>
-                <Typography.Text>
-                  {PROJECT_OVERVEIW.map((node) => {
-                    if (node.type === "text") {
-                      return (
-                        <>
-                          {node.content}
-                          <br />
-                          <br />
-                        </>
-                      );
-                    }
-                    if (node.type) {
-                      return (
-                        <div className="m-3">
-                          <img className="w-100 m-auto" src={node.content} />
-                        </div>
-                      );
-                    }
-                  })}
-                </Typography.Text>
-
-                <Divider
+            <div className="m-5">
+              <div>
+                <img
+                  className="w-auto"
                   style={{
-                    backgroundColor: "#aeaeae",
+                    height: "400px",
                   }}
-                />
-                <Typography.Title level={3}>
-                  Questions about the project?
-                  <br />
-                  <Button type="link" onClick={() => setDefaultTab("3")}>
-                    Check the FAQ section
-                  </Button>
-                </Typography.Title>
-
-                <Divider
-                  style={{
-                    backgroundColor: "#aeaeae",
-                  }}
+                  src={PROJECT_DATA.cover_img}
                 />
               </div>
-            </Tabs.TabPane>
-            <Tabs.TabPane tab="Comments" key="2">
-              Comments
-            </Tabs.TabPane>
-            <Tabs.TabPane tab="FAQ" key="3">
-              FAQ
-            </Tabs.TabPane>
-          </Tabs>
-        </Layout.Content>
+            </div>
+
+            <Tabs
+              defaultActiveKey={defaultTab}
+              activeKey={defaultTab}
+              onChange={setDefaultTab}
+            >
+              <Tabs.TabPane tab="Overview" key="1">
+                <div className="w-50 m-auto text-left">
+                  <Typography.Title level={3}>Overview</Typography.Title>
+                  <Typography.Text>
+                    {PROJECT_DATA.overview.map((node) => {
+                      if (node.type === "text") {
+                        return (
+                          <>
+                            {node.content}
+                            <br />
+                            <br />
+                          </>
+                        );
+                      }
+                      if (node.type) {
+                        return (
+                          <div className="m-3">
+                            <img className="w-100 m-auto" src={node.content} />
+                          </div>
+                        );
+                      }
+                    })}
+                  </Typography.Text>
+
+                  <Divider
+                    style={{
+                      backgroundColor: "#aeaeae",
+                    }}
+                  />
+                  <Typography.Title level={3}>
+                    Questions about the project?
+                    <br />
+                    <Button type="link" onClick={() => setDefaultTab("3")}>
+                      Check the FAQ section
+                    </Button>
+                  </Typography.Title>
+
+                  <Divider
+                    style={{
+                      backgroundColor: "#aeaeae",
+                    }}
+                  />
+                </div>
+              </Tabs.TabPane>
+              <Tabs.TabPane tab="Comments" key="2">
+                Comments
+              </Tabs.TabPane>
+              <Tabs.TabPane tab="FAQ" key="3">
+                FAQ
+              </Tabs.TabPane>
+            </Tabs>
+          </Layout.Content>
+        </div>
       </div>
-    </div>
+    </Page>
   );
 };
 
