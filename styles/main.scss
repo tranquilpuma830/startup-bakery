@@ -27,7 +27,8 @@
 
 .bg-filled,
 .bg-half-filled,
-.bg-half {
+.bg-half,
+.bg-guy {
   background: no-repeat !important;
   background-size: cover !important;
 }
@@ -39,6 +40,11 @@
 }
 .bg-half {
   background-image: url('/backgrounds/background-half.svg') !important;
+}
+.bg-guy {
+  background-size: contain !important;
+  background-image: url('/backgrounds/some_guy.svg') !important;
+  background-position: right !important;
 }
 
 .shape-background {
