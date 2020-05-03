@@ -1,5 +1,6 @@
 import React from "react";
-import { Layout } from 'antd';
+import { Layout, Row, Col } from "antd";
+import LeftMenu from "./Menu/LeftMenu";
 
 const { Header, Footer, Content } = Layout;
 
@@ -8,9 +9,14 @@ export default function Page(props) {
     <div>
       <Layout>
         <Header>Header</Header>
-        <Content>
-          {props.children}
-        </Content>
+        <Row>
+          <Col span={4}>
+            <LeftMenu />
+          </Col>
+          <Col span={20}>
+            <Content>{props.children}</Content>
+          </Col>
+        </Row>
         <Footer>Footer</Footer>
       </Layout>
     </div>
