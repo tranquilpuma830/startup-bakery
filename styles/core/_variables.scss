@@ -13,7 +13,7 @@ $primary-lightest: #FEE698;
 //$pink-light: #ff99cc;
 //$pink-lightest: #ffc2e0;
 //
-//$gray0: #333;
+$gray0: #333;
 //$gray1: #858585;
 //$gray2: #c2c2c2;
 //$gray3: #d6d6d6;
@@ -32,8 +32,8 @@ $danger: #E75A5F;
 //);
 //
 //// Body
-//$body-color-bg: white;
-//$body-color-text: $gray0;
+$body-color-bg: white;
+$body-color-text: $gray0;
 //$mute-color: $gray1;
 //
 //// Toolbar

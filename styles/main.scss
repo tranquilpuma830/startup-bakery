@@ -2,12 +2,19 @@
 
 @import 'core/variables';
 @import '~bootstrap/scss/bootstrap';
+@import '~nprogress/nprogress.css';
+
+// To make full-height page
+#__next {
+  height: 100% !important;
+}
 
 .border-thick {
   border-width: 14px !important;
 }
 
-.ant-list-item, .border-lightest {
+.ant-list-item,
+.border-lightest {
   border-color: $primary-lightest !important;
 }
 
@@ -15,13 +22,43 @@
   background-color: $primary-lightest !important;
 }
 
-
 .bg-light {
   background-color: $primary-light !important;
+}
+
+.bg-filled,
+.bg-half-filled,
+.bg-half,
+.bg-guy {
+  background: no-repeat !important;
+  background-size: cover !important;
+}
+.bg-filled {
+  background-image: url('/backgrounds/background-filled.svg') !important;
+}
+.bg-half-filled {
+  background-image: url('/backgrounds/background-half-filled.svg') !important;
+}
+.bg-half {
+  background-image: url('/backgrounds/background-half.svg') !important;
+}
+.bg-guy {
+  background-size: contain !important;
+  background-image: url('/backgrounds/some_guy.svg') !important;
+  background-position: right !important;
 }
 
 .shape-background {
   background: no-repeat;
   background-size: 100%;
   background-image: url('/backgrounds/Shape-0.svg');
+}
+
+.ant-btn-primary {
+  border-color: $primary !important;
+  background-color: $primary !important;
+}
+
+a {
+  color: $primary !important;
 }

@@ -79,8 +79,8 @@ const Auction = ({ ...props }) => {
                 </small>
               </Descriptions.Item>
             </Descriptions>
-            <div className='my-4 mr-4 w-100 d-flex justify-content-end'>
-              <Button onClick={onRaiseBet} type='primary' shape='round' className='float-left' ghost>
+            <div className='my-4 mx-4 w-100 d-flex justify-content-start'>
+              <Button onClick={onRaiseBet} type='primary' shape='round' className='float-right btn btn-primary' ghost>
                 <b>Поднять</b>
               </Button>
             </div>

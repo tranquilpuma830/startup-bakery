@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Link from "next/link";
 import { List, Typography, Button } from "antd";
 import { CaretUpOutlined } from "@ant-design/icons";
 
@@ -15,7 +16,6 @@ const ApprovalBtn = ({ count }) => {
 ApprovalBtn.defaultProps = {
   count: 0,
 };
-
 
 export default function ProjectListItem({
   loadin,
@@ -40,8 +40,16 @@ export default function ProjectListItem({
       </div>
 
       <ul className="ant-list-item-action ml-0 mt-2">
-        <li className="ml-2 ml-sm-0 mb-2 mb-sm-0"><Button size="small">Аукцион</Button></li>
-        <li><Button type="primary" size="small">Купить проект</Button></li>
+        <li className="ml-2 ml-sm-0 mb-2 mb-sm-0">
+          <Link href="/auction">
+            <Button size="small">Аукцион</Button>
+          </Link>
+        </li>
+        <li>
+          <Button type="primary" size="small">
+            Купить проект
+          </Button>
+        </li>
       </ul>
     </Fragment>
   );
@@ -49,7 +57,10 @@ export default function ProjectListItem({
 
   return (
     <Fragment>
-      <List.Item className="border-bottom-0" actions={[<ApprovalBtn count={34}/>]}>
+      <List.Item
+        className="border-bottom-0"
+        actions={[<ApprovalBtn count={34} />]}
+      >
         <List.Item.Meta
           avatar={ProjectItemAvatar}
           title={ProjectTitle}
