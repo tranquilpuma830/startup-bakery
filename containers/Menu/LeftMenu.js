@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu } from "antd";
+import "./LeftMenu.scss";
 
 const LeftMenu = () => {
   return (
