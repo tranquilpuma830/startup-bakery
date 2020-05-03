@@ -42,9 +42,9 @@ const Auction = ({ ...props }) => {
       <Content className='container-fluid mt-4'>
         <div className='d-flex flex-column justify-content-center align-items-center'>
           <Title>ТОП ИНВЕСТОР</Title>
-          <Avatar src={topPlayer.avatar} size={256} />
+          <Avatar src={topPlayer.avatar} size={256} className="border border-primary border-thick" />
           <div className='mt-4 text-center'>
-            <Title level={4} className='text-primary'>
+            <Title level={4}>
               {topPlayer.title}
             </Title>
             <h6>{topPlayer.rating}</h6>
@@ -59,7 +59,7 @@ const Auction = ({ ...props }) => {
               <Countdown className='text-sm' value={TIMER_DEADLINE} format='D дней H часов m минут s' />
             </Descriptions.Item>
           </Descriptions>
-          <div className='mt-4 d-flex justify-content-center'>
+          <div className='my-4 mr-4 w-100 d-flex justify-content-end'>
             <Button type='primary' shape='round' className='float-left' ghost>
               Поднять
             </Button>

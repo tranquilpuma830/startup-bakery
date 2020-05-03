@@ -2,3 +2,7 @@
 
 @import "core/variables";
 @import "~bootstrap/scss/bootstrap";
+
+.border-thick {
+    border-width: 14px !important;
+}
