@@ -47,7 +47,7 @@ const Auction = ({ ...props }) => {
       </Sider>
       <Content className='container-fluid  shape-background'>
         <div className='mt-4 d-flex flex-column justify-content-center align-items-center'>
-          <Title>ТОП ИНВЕСТОР</Title>
+          <Title strong>ТОП ИНВЕСТОР</Title>
           <Avatar src={topPlayer.avatar} size={256} />
           <div className='mt-4 text-center'>
             <Title level={4}>{topPlayer.title}</Title>
