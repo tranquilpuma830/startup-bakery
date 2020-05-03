@@ -1,12 +1,11 @@
 import React from "react";
 import "./Header.scss";
-import Logo from "../../assets/Icons/Logo";
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg ">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <Logo />
+          Лого
         </a>
         <button
           className="navbar-toggler"

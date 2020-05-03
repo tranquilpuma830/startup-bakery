@@ -1,5 +1,4 @@
 .menu {
-  border-right: 1px solid #FEE698;
   height: 300px;
 }
 
@@ -8,13 +7,8 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-bottom: 1px solid #FEE698;
 }
 
 .menu__item:hover {
   color: #FDB15D;
-}
-
-.menu__item .active {
-  background: red;
 }

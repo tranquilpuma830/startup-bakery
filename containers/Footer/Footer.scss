@@ -9,7 +9,6 @@
     clear: both;
     position: relative;
     height: 50%;
-    // margin-top: 100px;
     padding: 3% 5%;
     background-color: #FEE698;
 
@@ -33,21 +32,6 @@
     font-weight: bold;
   }
 
-  .country,
-  .language,
-  .social {
-    text-align: center;
-  }
-
-  .language__type {
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    text-transform: uppercase;
-  }
-
   .footer__content {
     height: 20%;
   }
@@ -64,11 +48,9 @@
     .list__item {
       padding: 10px 0px;
 
-
       a {
         transition: 0.2s;
         color: #FDB15D;
-        ;
         font-weight: bold;
       }
 
@@ -92,16 +74,6 @@
       margin-bottom: 2%;
     }
 
-    .social,
-    .country,
-    .language {
-      text-align: left;
-    }
-
-    .country__flag {
-      margin: 20px 20px 0px 0px;
-    }
-
     .language__type:nth-child(3) {
       padding-left: 20px;
     }
@@ -121,16 +93,6 @@
       .container {
         @include flexType(column);
       }
-    }
-
-    .social,
-    .country,
-    .language {
-      text-align: left;
-    }
-
-    .country__flag {
-      margin: 20px 20px 0px 0px;
     }
 
     .language__type:nth-child(3) {

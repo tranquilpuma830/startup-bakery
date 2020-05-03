@@ -1,14 +1,21 @@
 .navbar {
   background-color: white;
+  border-bottom: 1px solid #6b6b6b;
   z-index: 999;
 }
 
+.navbar-brand {
+  color: #FDB15D;
+  font-weight: bold;
+}
+
 .nav-link {
-  color: #DE6A1E;
+  color: #6b6b6b;
   font-weight: bold;
   text-transform: uppercase;
 }
 
+.navbar-brand:hover,
 .nav-link:hover {
   color: #FDB15D;
 }

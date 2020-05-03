@@ -6,27 +6,6 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__content">
-          <div className="language">
-            <p>Language</p>
-            <button
-              className={
-                lng === false ? "language__type active" : "language__type"
-              }
-              onClick={() => setLng(!lng)}
-            >
-              no
-            </button>
-            <button
-              className={
-                lng === true ? "language__type active" : "language__type"
-              }
-              onClick={() => setLng(!lng)}
-            >
-              en
-            </button>
-          </div>
-        </div>
-        <div className="footer__content">
           <h4 className="title m-bold">Помощь пользователю</h4>
           <ul className="list">
             <li className="list__item">
