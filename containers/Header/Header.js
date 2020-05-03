@@ -39,8 +39,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                <img width="20px" src="/icons/bets.svg" />
-                Аукцион
+                <img width="20px" src="/icons/bets.svg" /> Аукцион
               </a>
             </li>
           </ul>
