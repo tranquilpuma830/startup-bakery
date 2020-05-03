@@ -1,6 +1,28 @@
-@import "core/variables";
-@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-body {
-  background: white;
+@import 'core/variables';
+@import '~bootstrap/scss/bootstrap';
+
+.border-thick {
+  border-width: 14px !important;
+}
+
+.ant-list-item,
+.border-lightest {
+  border-color: $primary-lightest !important;
+}
+
+.bg-lightest {
+  background-color: $primary-lightest !important;
+}
+
+
+.bg-light {
+  background-color: $primary-light !important;
+}
+
+.shape-background {
+  background: no-repeat;
+  background-size: 100%;
+  background-image: url('/backgrounds/Shape-0.svg');
 }

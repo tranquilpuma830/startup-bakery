@@ -1,11 +1,12 @@
 import React from "react";
 import "./Header.scss";
+
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg ">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Лого
+          <img width="100px" src="/icons/logo.svg" />
         </a>
         <button
           className="navbar-toggler"
@@ -22,22 +23,22 @@ const Header = () => {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <a className="nav-link" href="#">
-                Курсы <span className="sr-only">(current)</span>
+                Меню <span className="sr-only">(current)</span>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Команды
+                Пекарня
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Новости
+                Дегустация
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Вакансии
+                Аукцион
               </a>
             </li>
           </ul>
