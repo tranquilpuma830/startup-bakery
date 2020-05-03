@@ -80,7 +80,7 @@ const Auction = ({ ...props }) => {
               </Descriptions.Item>
             </Descriptions>
             <div className='my-4 mx-4 w-100 d-flex justify-content-start'>
-              <Button onClick={onRaiseBet} type='primary' shape='round' className='float-right' ghost>
+              <Button onClick={onRaiseBet} type='primary' shape='round' className='float-right btn btn-primary' ghost>
                 <b>Поднять</b>
               </Button>
             </div>

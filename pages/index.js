@@ -16,24 +16,24 @@ const tailLayout = {
 export default function Home() {
   return (
     <Layout className='cover-container d-flex h-100 mx-auto flex-column bg-white bg-half-filled'>
-      <header class='masthead mb-auto'>
-        <div class='inner bg-white p-3'>
-          <nav class='d-flex nav nav-masthead justify-content-between align-items-center font-weight-bold'>
-            <a class='navbar-brand' href='#'>
-              <img src='/logo.svg' width='60' height='60' class='d-inline-block' alt='Startup bakery' />
+      <header className='masthead mb-auto'>
+        <div className='inner bg-white p-3'>
+          <nav className='d-flex nav nav-masthead justify-content-between align-items-center font-weight-bold'>
+            <a className='navbar-brand' href='#'>
+              <img src='/logo.svg' width='60' height='60' className='d-inline-block' alt='Startup bakery' />
               StartupBakery
             </a>
             <div className='d-flex w-auto float-right text-secondary'>
-              <a class='text-secondary nav-link' href='#'>
+              <a className='text-secondary nav-link' href='#'>
                 Курсы
               </a>
-              <a class='text-secondary nav-link' href='#'>
+              <a className='text-secondary nav-link' href='#'>
                 Команды
               </a>
-              <a class='text-secondary nav-link' href='#'>
+              <a className='text-secondary nav-link' href='#'>
                 Новости
               </a>
-              <a class='text-secondary nav-link' href='#'>
+              <a className='text-secondary nav-link' href='#'>
                 Вакансии
               </a>
             </div>
@@ -45,11 +45,11 @@ export default function Home() {
           <Form {...layout} name='basic' initialValues={{ remember: true }} className='my-auto'>
             <Title>Войти</Title>
 
-            <Form.Item name='username' rules={[{ required: true, message: 'Please input your username!' }]}>
+            <Form.Item name='username' rules={[{ required: true, message: 'Пожалуйста, введите email' }]}>
               <Input placeholder='Email' />
             </Form.Item>
 
-            <Form.Item name='password' rules={[{ required: true, message: 'Please input your password!' }]}>
+            <Form.Item name='password' rules={[{ required: true, message: 'Пожалуйста, введите пароль' }]}>
               <Input.Password placeholder='Пароль' />
             </Form.Item>
 
