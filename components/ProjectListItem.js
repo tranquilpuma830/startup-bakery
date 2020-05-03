@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { List, Typography } from "antd";
+import { List, Typography, Button } from "antd";
 import { CaretUpOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
@@ -39,14 +39,17 @@ export default function ProjectListItem({
         <Text>{description}</Text>
       </div>
 
-      <a key="list-loadmore-edit">edit</a>
+      <ul className="ant-list-item-action ml-0 mt-2">
+        <li className="ml-2 ml-sm-0 mb-2 mb-sm-0"><Button size="small">Аукцион</Button></li>
+        <li><Button type="primary" size="small">Купить проект</Button></li>
+      </ul>
     </Fragment>
   );
   const ProjectTitle = <Text className="text-primary">{projectName}</Text>;
 
   return (
     <Fragment>
-      <List.Item className="border-bottom" actions={[<ApprovalBtn count={34}/>]}>
+      <List.Item className="border-bottom-0" actions={[<ApprovalBtn count={34}/>]}>
         <List.Item.Meta
           avatar={ProjectItemAvatar}
           title={ProjectTitle}
