@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Descriptions, Avatar, Card, Divider } from 'antd';
 
 const AVATARS_PATH = '/investors_avatars';
 const investor_avatars_path = {
@@ -55,6 +56,7 @@ const topRaisedPlayer = PLAYERS.reduce(function (prev, current) {
 const Auction = ({ ...props }) => {
   const [topPlayer, setTopPlayer] = useState(topRaisedPlayer);
   // TODO: Timer
+  // TODO: Raise bet
 
   return (
     <div className='container-fluid'>
@@ -63,30 +65,34 @@ const Auction = ({ ...props }) => {
           <div className='container-fluid'>
             <div className=' d-flex flex-column justify-content-center align-items-center'>
               <h2 className=''>ТОП ИНВЕСТОР</h2>
-              <img src={topPlayer.avatar} className='d-block rounded-circle img-fluid w-50' />
+              <Avatar src={topPlayer.avatar} size={256} />
               <div className='mt-4 text-center'>
                 <h4 className='text-primary'>{topPlayer.title}</h4>
                 <h6>{topPlayer.rating}</h6>
               </div>
 
-              <hr className='devider w-100' />
-              <div className='mt-4 text-center'>
-                <p>
-                  <span className='text-primary'>Максимальная инвестиция: </span>
-                  {topPlayer.amount}$
-                </p>
-                <p>
-                  <span className='text-primary'>Таймер </span>
-                  1 день(-я) 20 часов(-а) до окончания
-                </p>
+              <Divider />
+              <Descriptions size='medium' column={1}>
+                <Descriptions.Item label='Максимальная инвестиция'>
+                  <span className='font-weight-bold'>{topPlayer.amount}$</span>
+                </Descriptions.Item>
+                <Descriptions.Item label='Таймер'>
+                  <span className='text-primary'>1 день(-я) 20 часов(-а) до окончания</span>
+                </Descriptions.Item>
+              </Descriptions>
+              <div className='mt-4 float-right'>
+                <Button type='primary' shape='round' className='float-left' ghost>
+                  Поднять
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <section id='sidebar' className='float-md-left col col-md-4 col-sm-12'>
-        <h4>Инвесторы</h4>
-        <InvestorsList players={PLAYERS} />
+      <section id='sidebar' className='float-md-left mt-2 col col-md-4 col-sm-12'>
+        <Card title='Инвесторы'>
+          <InvestorsList players={PLAYERS} />
+        </Card>
       </section>
     </div>
   );
