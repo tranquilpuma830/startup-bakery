@@ -33,21 +33,20 @@ const Auction = ({ ...props }) => {
   const onRaiseBet = () => {};
 
   return (
-    <Layout>
+    <Layout className="bg-white" >
       <Sider id='sidebar'>
         <Card title='Инвесторы' className='h-100 rounded-0'>
           <InvestorsList players={PLAYERS} />
         </Card>
       </Sider>
       <Content className='container-fluid mt-4'>
-        <div className=' d-flex flex-column justify-content-center align-items-center'>
+        <div className='d-flex flex-column justify-content-center align-items-center'>
           <Title>ТОП ИНВЕСТОР</Title>
           <Avatar src={topPlayer.avatar} size={256} />
           <div className='mt-4 text-center'>
             <Title level={4} className='text-primary'>
               {topPlayer.title}
             </Title>
-            <span className='text-primary'>adasdsd</span>
             <h6>{topPlayer.rating}</h6>
           </div>
 
