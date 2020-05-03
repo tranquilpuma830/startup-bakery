@@ -1,6 +1,5 @@
 import React from "react";
 import "./Header.scss";
-
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg ">
@@ -22,22 +21,25 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Меню <span className="sr-only">(current)</span>
+              <a className="nav-link" href="/ideas">
+                <img width="20px" src="/icons/menu.svg" /> Меню{" "}
+                <span className="sr-only">(current)</span>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Пекарня
+                <img width="20px" src="/icons/bakery.svg" /> Пекарня
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
+                <img width="20px" src="/icons/degustation.svg" />
                 Дегустация
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
+                <img width="20px" src="/icons/bets.svg" />
                 Аукцион
               </a>
             </li>
