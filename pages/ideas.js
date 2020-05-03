@@ -1,7 +1,6 @@
 import React from 'react';
-import { Layout } from 'antd';
 
-export default function Home() {
+export default function Ideas() {
   return (
     <div>
       asdasd
