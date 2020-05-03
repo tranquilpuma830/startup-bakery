@@ -2,6 +2,12 @@
 
 @import 'core/variables';
 @import '~bootstrap/scss/bootstrap';
+@import '~nprogress/nprogress.css';
+
+// To make full-height page
+#__next {
+  height: 100% !important;
+}
 
 .border-thick {
   border-width: 14px !important;
@@ -16,9 +22,24 @@
   background-color: $primary-lightest !important;
 }
 
-
 .bg-light {
   background-color: $primary-light !important;
+}
+
+.bg-filled,
+.bg-half-filled,
+.bg-half {
+  background: no-repeat !important;
+  background-size: cover !important;
+}
+.bg-filled {
+  background-image: url('/backgrounds/background-filled.svg') !important;
+}
+.bg-half-filled {
+  background-image: url('/backgrounds/background-half-filled.svg') !important;
+}
+.bg-half {
+  background-image: url('/backgrounds/background-half.svg') !important;
 }
 
 .shape-background {
