@@ -66,7 +66,7 @@
 .login {
   width: 80%;
   margin: 10% auto;
-  border-radius: 5px;
+  border-radius: 20px;
   background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9,
     -20px -20px 60px #ffffff;
@@ -88,7 +88,7 @@
 .login__img {
   background-image: url('/backgrounds/background.png');
   background-size: 100% 100%;
-
+  border-radius: 20px 0px 0px 20px;
 }
 
 .login__data {
@@ -135,4 +135,19 @@ a.btn-primary {
   padding: 10px 0px;
   width: 250px;
   border-color: white;
+}
+
+.bets__card {
+  width: 80%;
+  margin: 5% auto;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.bets__profile {
+  padding: 20px;
+}
+
+.bets__content {
+  padding: 10% 5%;
 }
