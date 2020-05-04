@@ -1,18 +1,8 @@
-import React, { useState } from "react";
-import {
-  Button,
-  Descriptions,
-  Avatar,
-  Card,
-  Divider,
-  List,
-  Typography,
-  Statistic,
-  Layout,
-} from "antd";
-import { PLAYERS } from "../constants/users";
-import Page from "../containers/Page";
-import "../styles/main.scss";
+import React, { useState } from 'react';
+import { Button, Descriptions, Avatar, Card, Divider, List, Typography, Statistic, Layout } from 'antd';
+import { PLAYERS } from '../constants/users';
+import Page from '../containers/Page';
+import '../styles/main.scss';
 
 const { Sider, Content } = Layout;
 const { Title } = Typography;
@@ -28,29 +18,30 @@ const InvestorsList = ({ players }) => {
   return (
     <List
       itemLayout="horizontal"
-      dataSource={PLAYERS}
+      dataSource={players}
       renderItem={(item, idx) => (
-        <List.Item className="border-bottom-0">
-          <List.Item.Meta
-            avatar={<Avatar src={item.avatar} />}
-            title={item.title}
-            description={item.amount + "$"}
-          />
+        <List.Item>
+          <List.Item.Meta avatar={<Avatar src={item.avatar} />} title={item.title} description={item.amount + '$'} />
         </List.Item>
       )}
     />
   );
 };
 
-const Auction = ({ ...props }) => {
+const Auction = () => {
   const [topPlayer, setTopPlayer] = useState(topRaisedPlayer);
+  const [players, setPlayers] = useState(PLAYERS.sort((a, b) => (a.amount < b.amount ? 1 : -1)));
+  const player = players[1];
 
   const onRaiseBet = () => {
-    const amount = topPlayer.amount + 1000;
+    const amount = player.amount + 1000;
+    const newPlayers = players;
+    newPlayers[1] = player;
     setTopPlayer({
-      ...topPlayer,
+      ...player,
       amount,
     });
+    setPlayers(newPlayers.sort((a, b) => (a.amount < b.amount ? 1 : -1)));
   };
 
   return (
@@ -58,47 +49,44 @@ const Auction = ({ ...props }) => {
       <Layout className="bg-white">
         <Sider id="sidebar">
           <Card className="border-bottom-0 h-100 rounded-0">
-            <h5 className="auction__sidebar_title"> Инвесторы </h5>
-            <InvestorsList players={PLAYERS} />
+            <h5 className="auction__sidebar_title">Инвесторы </h5>
+            <InvestorsList players={players} />
           </Card>
         </Sider>
 
-        <Content className="auction__top">
-          <div class="row bets__card">
-            <div class="col-8 bets__project">
+        <Content className="auction__top bg">
+          <div className="row bets__card">
+            <div className="col-8 bets__project">
               <div className="bets__project__info">
-                <div class="row">
-                  <div class="col-4">
+                <div className="row">
+                  <div clclassNameass="col-4">
                     <img width="150px" src="/icons/pizza.svg" />
                   </div>
-                  <div class="col-8 text-left">
+                  <div className="col-8 text-left">
                     <p>Startup Bakery</p>
                     <p>
-                      Startup Bakery - уникальная площадка, где каждый может
-                      разместить свою проектную идею и довести ее результата.
-                      Присоединяйся к Startup Bakery, и с нашей помощью ты
-                      сможешь “выпечь” свой стартап, пройдя самые трудные этапы,
-                      на которых чаще всего перегорают проекты.
+                      Startup Bakery - уникальная площадка, где каждый может разместить свою проектную идею и довести ее
+                      результата. Присоединяйся к Startup Bakery, и с нашей помощью ты сможешь “выпечь” свой стартап,
+                      пройдя самые трудные этапы, на которых чаще всего перегорают проекты.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="container bets__project__menu">
-                <div class="row">
-                  <div class="col-4">
+                <div className="row">
+                  <div className="col-4">
                     <div className="bets__project__title">Статус проекта</div>
                   </div>
-                  <div class="col-8">
+                  <div className="col-8">
                     Команда распределила <b>задачи</b>, проверила
-                    <b>гипотезы</b> и приступает к разработке <b>прототипа</b>.
+                    <b> гипотезы</b> и приступает к разработке <b>прототипа</b>.
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-4">
+                <div className="row">
+                  <div className="col-4">
                     <div className="bets__project__title">Таймер</div>
                   </div>
-                  <div class="col-8">
-                    <p>
+                  <div className="col-8">
                       До следующего раунда осталось:
                       <span className="font-weight-bold">
                         <Descriptions.Item label="Таймер">
@@ -107,47 +95,41 @@ const Auction = ({ ...props }) => {
                               valueRender={(element) => {
                                 return (
                                   <div>
-                                    <span className="font-weight-bold">
-                                      {element}
-                                    </span>
+                                    <span className="font-weight-bold">{element}</span>
                                   </div>
                                 );
                               }}
-                              valueStyle={{ fontSize: "small" }}
+                              valueStyle={{ fontSize: 'small' }}
                               value={TIMER_DEADLINE}
                               format="D дней H часов m минут s"
                             />
                           </small>
                         </Descriptions.Item>
                       </span>
-                    </p>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-4">
+                <div className="row">
+                  <div className="col-4">
                     <div className="bets__project__title">Команда</div>
                   </div>
-                  <div class="col-8">
+                  <div className="col-8">
                     <b>Seals</b>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-4 bets__profile">
-              <div class="bets__title">Топ инвестор</div>
-              <Avatar
-                src="https://www.tourdom.ru/upload/iblock/e46/e469d6c078fdc6d46886f51c3d8f0737.jpeg"
-                size={156}
-              />
+            <div className="col-4 bets__profile">
+              <div className="bets__title">Топ инвестор</div>
+              <Avatar src={topPlayer.avatar} size={156} />
               <div className="bets__profile__content">
-                <h5>Билл Гейтс</h5>
-                <p>CEO Microsoft</p>
+                <h5>{topPlayer.title}</h5>
+                <p>{topPlayer.role}</p>
                 <div className="bets__max">
                   <b> Сумма инвестиций: </b> {topPlayer.amount}$
                 </div>
               </div>
-              <a onClick={onRaiseBet} className="btn btn-primary mb-4">
+              <a onClick={onRaiseBet} className="btn btn-primary btn-gradient mb-4">
                 Поднять ставку
               </a>
             </div>
