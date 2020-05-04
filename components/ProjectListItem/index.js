@@ -1,8 +1,8 @@
 import "./styles.scss";
 
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { List, Typography, Button, Card } from "antd";
+import { List, Typography } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
@@ -13,6 +13,10 @@ export default function ProjectListItem({
   logoUrl,
   approval,
 }) {
+  const [approvs, setApprovs] = useState(approval);
+
+  const incrementApproves = () => setApprovs((a) => ++a);
+
   return (
     <List.Item className="project-list-item border-bottom-0 ">
       <div className="row">
@@ -33,19 +37,26 @@ export default function ProjectListItem({
 
               <ul className="ant-list-item-action ml-0 mt-2">
                 <li className="ml-2 ml-sm-0 mb-2 mb-sm-0">
-                  <button className="btn btn-gradient btn-round">
-                    Открыть
-                  </button>
+                  <Link href="/project">
+                    <button className="btn btn-gradient btn-rounded btn-sm">
+                      Открыть
+                    </button>
+                  </Link>
                 </li>
                 <li>
-                  <button className="btn btn-outline-primary btn-round">
-                    Аукцион
-                  </button>
+                  <Link href="/auction">
+                    <button className="btn btn-outline-primary btn-rounded btn-sm">
+                      Аукцион
+                    </button>
+                  </Link>
                 </li>
                 <li>
-                  <button className="btn btn-outline-primary btn-round">
-                    <HeartOutlined />
-                    <Text>{approval}</Text>
+                  <button
+                    className="btn btn-outline-primary btn-rounded align-items-center d-flex btn-sm"
+                    onClick={incrementApproves}
+                  >
+                    <HeartOutlined className="mr-1" />
+                    {approvs}
                   </button>
                 </li>
               </ul>

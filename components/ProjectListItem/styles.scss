@@ -3,6 +3,8 @@
 .project-list-item {
   border-radius: 15px;
   max-width: 600px;
+  transition: box-shadow 500ms;
+  transition: background-color 500ms;
 
   &:hover {
     cursor: pointer;
@@ -23,6 +25,7 @@
     border-radius: 38px;
     box-shadow: 10px 10px 20px rgba(69, 90, 100, 0.25);
     background-color: white;
+    transition: box-shadow 200ms;
     img {
       width: 100%;
 

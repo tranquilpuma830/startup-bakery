@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import { Button, List } from "antd";
+import { List } from "antd";
 
 import ProjectListItem from "./ProjectListItem";
 
@@ -14,7 +13,9 @@ function LoadMoreSection() {
         lineHeight: "32px",
       }}
     >
-      <button className="btn btn-outline-primary btn-round">loading more</button>
+      <button className="btn btn-outline-primary btn-rounded">
+        loading more
+      </button>
     </div>
   );
 }
@@ -22,6 +23,7 @@ function LoadMoreSection() {
 function ProjectList({ projects }) {
   return (
     <List
+      className="d-flex flex-column align-items-center"
       loadMore={<LoadMoreSection />}
       itemLayout="horizontal"
       dataSource={projects}
