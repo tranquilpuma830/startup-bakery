@@ -1,8 +1,48 @@
-import React from "react";
 import "./Header.scss";
+
+import React, { Fragment } from "react";
+import { Avatar, Typography, Menu, Dropdown } from "antd";
 import Link from "next/link";
 
+import { useUser } from "../UserContext";
+
+const { Text } = Typography;
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.alipay.com/"
+      >
+        1st menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
+        2nd menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a
+        href="/api/auth/logout"
+        className="text-danger"
+        rel="noopener noreferrer"
+      >
+        Logout
+      </a>
+    </Menu.Item>
+  </Menu>
+);
+
 const Header = ({ forLanding }) => {
+  const user = useUser();
+
   return (
     <nav
       className={`navbar ${
@@ -10,9 +50,9 @@ const Header = ({ forLanding }) => {
       }`}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          <img src="/logo.svg" className="mr-3" style={{ width: "20vw" }} />
-        </a>
+        <Link href="/">
+          <img src="/logo.svg" className="mr-3 c-pointer" style={{ width: "20vw" }} />
+        </Link>
         <button
           className="navbar-toggler btn"
           type="button"
@@ -64,32 +104,23 @@ const Header = ({ forLanding }) => {
             </li>
           </ul>
           {!forLanding && (
-            <span className="navbar-text">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <img width="25px" src="/icons/profile.svg" className="mr-2" />
-                Профиль
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
-            </span>
+            <Fragment>
+              {Boolean(user) ? (
+                <Dropdown overlay={menu}>
+                  <a
+                    className="ant-dropdown-link"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <Avatar src={user.picture}>{user.name[0]}</Avatar>
+                    <Text className="ml-1">{user.email}</Text>
+                  </a>
+                </Dropdown>
+              ) : (
+                <Link href="/login">
+                  <button className="btn btn-outline-primary">Login</button>
+                </Link>
+              )}
+            </Fragment>
           )}
         </div>
       </div>

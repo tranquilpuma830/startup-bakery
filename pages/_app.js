@@ -6,6 +6,10 @@ import * as firebase from "firebase";
 import * as NProgress from "nprogress";
 import { Router } from "next/router";
 
+import _get from "lodash/get";
+
+import { useUser } from "../containers/UserContext";
+
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
   NProgress.start();
@@ -15,7 +19,9 @@ Router.events.on("routeChangeComplete", () => {
 });
 Router.events.on("routeChangeError", () => NProgress.done());
 
-export default function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
+  const user = useUser();
+
   useEffect(() => {
     // Intialize the Firebase SDK
     if (firebase.apps.length < 1) {
@@ -28,9 +34,13 @@ export default function MyApp({ Component, pageProps }) {
         messagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
         appId: process.env.FB_APP_ID,
       });
+      firebase.auth().languageCode = "ru";
       console.log("Firebase SDK has been intialize");
     }
   }, []);
 
   return <Component {...pageProps} />;
 }
+
+export default MyApp;
+
