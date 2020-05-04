@@ -112,7 +112,7 @@ const Header = ({ forLanding }) => {
                     onClick={(e) => e.preventDefault()}
                   >
                     <Avatar src={user.picture}>{user.name[0]}</Avatar>
-                    <Text className="ml-1">{user.email}</Text>
+                    <Text className="ml-1">{user.name}</Text>
                   </a>
                 </Dropdown>
               ) : (
