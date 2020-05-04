@@ -27,14 +27,7 @@ const PLAYERS = [
     rating: 'Advanced',
     role: 'CEO Microsoft',
     avatar: investor_avatars_path.danil,
-  },
-  {
-    title: 'Билл Гейтс',
-    amount: 3000000,
-    rating: 'Advanced',
-    role: 'CEO Microsoft',
-    avatar: 'https://www.tourdom.ru/upload/iblock/e46/e469d6c078fdc6d46886f51c3d8f0737.jpeg',
-  },
+  }
 ];
 
 module.exports = {
