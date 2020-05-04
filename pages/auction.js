@@ -35,13 +35,12 @@ const Auction = () => {
 
   const onRaiseBet = () => {
     const amount = player.amount + 1000;
-    const newPlayers = players;
-    newPlayers[1] = player;
+    players[1] = player;
     setTopPlayer({
       ...player,
       amount,
     });
-    setPlayers(newPlayers.sort((a, b) => (a.amount < b.amount ? 1 : -1)));
+    setPlayers(players.sort((a, b) => (a.amount < b.amount ? 1 : -1)));
   };
 
   return (
@@ -59,7 +58,7 @@ const Auction = () => {
             <div className="col-8 bets__project">
               <div className="bets__project__info">
                 <div className="row">
-                  <div clclassNameass="col-4">
+                  <div className="col-4">
                     <img width="150px" src="/icons/pizza.svg" />
                   </div>
                   <div className="col-8 text-left">
