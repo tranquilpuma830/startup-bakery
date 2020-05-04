@@ -1,5 +1,7 @@
 import React from "react";
 import "./Header.scss";
+import Link from "next/link";
+
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg ">
@@ -21,26 +23,34 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/ideas">
-                <img width="20px" src="/icons/menu.svg" /> Меню{" "}
-                <span className="sr-only">(current)</span>
-              </a>
+              <Link href="/ideas">
+                <a className="nav-link">
+                  <img width="20px" src="/icons/menu.svg" /> Меню{" "}
+                  <span className="sr-only">(current)</span>
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <img width="20px" src="/icons/bakery.svg" /> Пекарня
-              </a>
+              <Link href="/#">
+                <a className="nav-link" href="#">
+                  <img width="20px" src="/icons/bakery.svg" /> Пекарня
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <img width="20px" src="/icons/degustation.svg" />
-                Дегустация
-              </a>
+              <Link href="/ideas">
+                <a className="nav-link" href="#">
+                  <img width="20px" src="/icons/degustation.svg" />
+                  Дегустация
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <img width="20px" src="/icons/bets.svg" /> Аукцион
-              </a>
+              <Link href="/auction">
+                <a className="nav-link" href="#">
+                  <img width="20px" src="/icons/bets.svg" /> Аукцион
+                </a>
+              </Link>
             </li>
           </ul>
           <span className="navbar-text">

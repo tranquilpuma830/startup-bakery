@@ -28,18 +28,28 @@
 
 .bg-filled,
 .bg-half-filled,
-.bg-half {
+.bg-half,
+.bg-guy {
   background: no-repeat !important;
   background-size: cover !important;
 }
+
 .bg-filled {
   background-image: url('/backgrounds/background-filled.svg') !important;
 }
+
 .bg-half-filled {
   background-image: url('/backgrounds/background-half-filled.svg') !important;
 }
+
 .bg-half {
   background-image: url('/backgrounds/background-half.svg') !important;
+}
+
+.bg-guy {
+  background-size: contain !important;
+  background-image: url('/backgrounds/some_guy.svg') !important;
+  background-position: right !important;
 }
 
 .shape-background {
@@ -72,7 +82,7 @@
 
 .login__img {
   // Тет будет инфографика картинка но пока ее нет
-  background-image: url('https://images.unsplash.com/photo-1588482524157-c23785098665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80');
+  background-image: url('/icons/background.png"');
   background-size: cover;
 }
 

@@ -6,9 +6,9 @@ if (typeof require !== "undefined") {
   require.extensions[".less"] = (file) => {};
 }
 
-module.exports = withLess(
-  withSass({
-    experimental: { scss: true },
+module.exports = withSass(
+  withLess({
+    ignoreOrder: true,
     lessLoaderOptions: {
       javascriptEnabled: true,
     },
