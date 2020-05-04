@@ -140,7 +140,7 @@ const Auction = () => {
                 </div>
               </div>
             </div>
-            <div className="col-4 bets__profile">
+            <div className="col-4 bets__profile px-sm-1">
               <div className="bets__title">Топ инвестор</div>
               {!isLoading ? (
                 <>
