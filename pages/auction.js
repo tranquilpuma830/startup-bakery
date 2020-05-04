@@ -30,7 +30,7 @@ const InvestorsList = ({ players }) => {
       itemLayout="horizontal"
       dataSource={PLAYERS}
       renderItem={(item, idx) => (
-        <List.Item>
+        <List.Item className="border-bottom-0">
           <List.Item.Meta
             avatar={<Avatar src={item.avatar} />}
             title={item.title}
