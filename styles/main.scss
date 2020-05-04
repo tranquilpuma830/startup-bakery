@@ -133,6 +133,10 @@ a.btn-primary {
   color: white !important;
 }
 
+.btn-rounded {
+  border-radius: 23.5px;
+}
+
 .btn-gradient {
   background: linear-gradient(270deg, $primary 0%, $primary-light 100%);
   border: none !important;
