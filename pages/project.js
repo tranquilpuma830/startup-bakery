@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Typography, Layout, Tabs, Divider, Button, Collapse, Col } from "antd";
-import { PROJECT_DATA } from "../constants/projects";
+
 import Page from "../containers/Page";
+
+import { PROJECT_DATA } from "../constants/projects";
 
 const Project = () => {
   const [defaultTab, setDefaultTab] = useState("2");
