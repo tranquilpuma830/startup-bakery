@@ -1,14 +1,29 @@
-import React, { useState } from "react";
-import { Typography, Layout, Tabs, Divider, Button, Collapse, Col } from "antd";
+import React, { useState, useEffect } from "react";
+import { Typography, Layout, Tabs, Progress, Checkbox, Button } from "antd";
+import r from "next/router";
 
 import Page from "../../../containers/Page";
 
 import { PROJECT_DATA } from "../../../constants/projects";
+import { IDEAS_MOCK } from "../../../constants/ideas";
 import "./styles.scss";
 const projectLogosPath = "/project-logos/";
 
 const Project = () => {
-  const [defaultTab, setDefaultTab] = useState("1");
+  const [projectID, setProjectID] = useState("");
+  const [projectIdea, setProjectIdea] = useState(null);
+
+  const [defaultTab, setDefaultTab] = useState("3");
+
+  useEffect(() => {
+    if (r.router?.query.id) {
+      setProjectID(r.router?.query.id);
+    }
+  }, [r.router?.query.id]);
+
+  useEffect(() => {
+    setProjectIdea(IDEAS_MOCK.find((idea) => String(idea.id) === projectID));
+  }, [projectID]);
 
   const projectOverview = PROJECT_DATA.overview.map((node) => {
     if (node.type === "text") {
@@ -20,7 +35,7 @@ const Project = () => {
         </>
       );
     }
-    if (node.type === 'title') {
+    if (node.type === "title") {
       return (
         <div className="m-3">
           <Typography.Title level={3}>{node.content}</Typography.Title>
@@ -29,26 +44,23 @@ const Project = () => {
     }
   });
 
-  const comments = PROJECT_DATA.comments.map((comment) => (
-    <div className="w-50 m-auto text-left">
-      <Typography.Title level={4}>{comment.author}</Typography.Title>
-      <Typography.Text
-        style={{
-          color: "#9B9E9E",
-        }}
-      >
-        {comment.time}
-      </Typography.Text>
-
-      <br />
-      <br />
-      <Typography.Text>{comment.content}</Typography.Text>
-
-      <Divider
-        style={{
-          backgroundColor: "#aeaeae",
-        }}
-      />
+  const team = projectIdea?.team.map((man) => (
+    <div className="team">
+      <div className="team-avatar">
+        <img className="" src={man.avatar} />
+      </div>
+      <div className="w-50 text-left">
+        <Typography.Title level={4}>{man.title}</Typography.Title>
+        {man.role && (
+          <Typography.Text
+            style={{
+              color: "#9B9E9E",
+            }}
+          >
+            {man.role}
+          </Typography.Text>
+        )}
+      </div>
     </div>
   ));
 
@@ -65,7 +77,10 @@ const Project = () => {
           <Layout.Content>
             <div className="d-flex align-items-center">
               <div className="flex-1">
-                <img src={`${projectLogosPath}startup-bakery.svg`} className="w-50" />
+                <img
+                  src={`${projectLogosPath}startup-bakery.svg`}
+                  className="w-50"
+                />
               </div>
               <div className="flex-1 text-left">
                 <Typography.Title className="mt-5">
@@ -95,43 +110,52 @@ const Project = () => {
               <Tabs.TabPane tab="Обзор" key="1">
                 <div className="w-50 m-auto text-left">
                   <Typography.Text>{projectOverview}</Typography.Text>
-                  <div>
-                    <Divider
-                      style={{
-                        backgroundColor: "#aeaeae",
-                      }}
-                    />
-                    <Typography.Title level={3}>
-                      Questions about the project?
-                      <br />
-                      <Button type="link" onClick={() => setDefaultTab("3")}>
-                        Check the FAQ section
-                      </Button>
-                    </Typography.Title>
-
-                    <Divider
-                      style={{
-                        backgroundColor: "#aeaeae",
-                      }}
-                    />
-                  </div>
                 </div>
               </Tabs.TabPane>
               <Tabs.TabPane tab="Команда" key="2">
                 <Typography.Title level={3}>Команда</Typography.Title>
-                <div>{comments}</div>
+                <div className="team-container">{team}</div>
               </Tabs.TabPane>
               <Tabs.TabPane tab="Задачи" key="3">
-                <Typography.Title level={3}>Задачи</Typography.Title>
+                <Typography.Title level={3}>Вы почти у цели!</Typography.Title>
                 <div className="m-auto w-50 text-left">
-                  <Collapse defaultActiveKey={[]} expandIconPosition="right">
-                    {PROJECT_DATA.FAQ.map((item, i) => (
-                      <Collapse.Panel key={i} header={item.header}>
-                        {item.content}
-                      </Collapse.Panel>
-                    ))}
-                  </Collapse>
+                  <Progress
+                    strokeColor={{
+                      "0%": "rgba(253, 177, 93, 1)",
+                      "100%": "rgba(222, 106, 30, 1)",
+                    }}
+                    percent={45}
+                  />
+
+                  <div className="m-3">
+                    <div>
+                      <Checkbox className="check" checked>
+                        Сформировать команду
+                      </Checkbox>
+                    </div>
+                    <div>
+                      <Checkbox className="check" checked>
+                        Поставить цели
+                      </Checkbox>
+                    </div>
+                    <div>
+                      <Checkbox className="check" checked>
+                        Распределить задачи
+                      </Checkbox>
+                    </div>
+                    <div>
+                      <Checkbox className="check">Проверить гипотезы</Checkbox>
+                    </div>
+                  </div>
                 </div>
+                <Button
+                  type="primary"
+                  size="large"
+                  className="m-2"
+                  style={{ borderRadius: "5px", fontWeight: "700" }}
+                >
+                  Перейти в менеджер задач
+                </Button>
               </Tabs.TabPane>
             </Tabs>
           </Layout.Content>
