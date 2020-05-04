@@ -239,6 +239,49 @@ a.btn-primary {
   padding: 10% 5%;
 }
 
+.degustation__result {
+  padding: 5%;
+}
+
+.degustation__card {
+  background-color: white;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 30px;
+  padding: 10%;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.15);
+
+
+  .progress {
+    margin: 10px;
+  }
+
+}
+
+.degustation__menu {
+  padding: 0px 1%;
+
+  .degustation__menu_title {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(100, 100, 100);
+    padding: 20px;
+  }
+}
+
+.degustaion__card_menu {
+  margin-top: 20px;
+}
+
+.degustation__card_footer {
+  margin: 20px 0px;
+}
+
+.degustation__menu {
+  background: white;
+}
+
 .btn-rounded {
   border-radius: 23.5px;
 }
@@ -290,6 +333,7 @@ a.btn-primary {
   transition: all 400ms ease 0s;
   display: flex;
 }
+
 .google-btn .google-icon-wrapper {
   position: absolute;
   margin-top: 1px;
@@ -299,6 +343,7 @@ a.btn-primary {
   border-radius: 2px;
   user-select: none
 }
+
 .google-btn .google-icon-svg {
   position: absolute;
   margin-top: 11px;
@@ -307,6 +352,7 @@ a.btn-primary {
   height: 18px;
   user-select: none
 }
+
 .google-btn .btn-text {
   float: right;
   margin: 11px 14px 40px 40px;
@@ -316,10 +362,12 @@ a.btn-primary {
   font-family: Roboto;
   user-select: none
 }
+
 .google-btn:hover {
   box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
   user-select: none
 }
+
 .google-btn:active {
   box-shadow: 0 1px 1px #757575;
   background: #F8F8F8;
@@ -339,7 +387,8 @@ a.btn-primary {
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
   cursor: pointer;
   cursor: hand;
-  align-self: center;-webkit-touch-callout: none;
+  align-self: center;
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -347,6 +396,7 @@ a.btn-primary {
   user-select: none;
   transition: all 400ms ease 0s
 }
+
 .normal-btn .btn-text {
   float: left;
   margin: 11px 14px 11px 14px;
@@ -356,10 +406,12 @@ a.btn-primary {
   font-family: Roboto;
   user-select: none
 }
+
 .normal-btn:hover {
   box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
   user-select: none
 }
+
 .normal-btn:active {
   box-shadow: 0 1px 1px #757575;
   background: #F8F8F8;
@@ -369,6 +421,7 @@ a.btn-primary {
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
+
   .lead-land-text,
   .btn-gradient {
     font-size: 14px !important;
