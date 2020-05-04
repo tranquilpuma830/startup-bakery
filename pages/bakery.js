@@ -27,11 +27,7 @@ export default function Bakery() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 py-3 mb-3">
-<<<<<<< HEAD
             <PageHeader title="Пекарня" subTitle="">
-=======
-            <PageHeader title="Пекарня">
->>>>>>> c0cb8a27eeb45bca660805cb66efc027619b9d88
               <div className="row">
                 <div className="col-12 col-sm-4">
                   <Select defaultValue="lucy" className="w-100">

@@ -2,20 +2,12 @@
     flex: 1;
 }
 
-
-.project__bg {
-    background-image: url('/backgrounds/background.svg') !important;
-    background-size: cover;
-}
-
 .team-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 400px;
 }
-
-
 
 .team {
     // width: 50%;
@@ -40,6 +32,11 @@
     h4 {
         max-width: 200px;
     }
+}
+
+.more__bg {
+    background-image: url('/backgrounds/background.svg') !important;
+    background-size: cover;
 }
 
 .ant-tabs-tab {
