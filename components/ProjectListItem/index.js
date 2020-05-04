@@ -12,8 +12,12 @@ export default function ProjectListItem({
   projectName,
   logoUrl,
   approval,
+  id,
   children
 }) {
+
+  console.log(id);
+  
   const [approvs, setApprovs] = useState(approval);
 
   const incrementApproves = () => setApprovs((a) => ++a);
@@ -40,7 +44,7 @@ export default function ProjectListItem({
 
               <ul className="ant-list-item-action ml-0 mt-2">
                 <li className="ml-2 ml-sm-0 mb-2 mb-sm-0">
-                  <Link href="/project">
+                  <Link href={`/projects/${id}`}>
                     <button className="btn btn-gradient btn-rounded btn-sm">
                       Открыть
                     </button>
