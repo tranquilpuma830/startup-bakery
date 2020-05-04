@@ -78,8 +78,8 @@ export default function Bakery() {
                       Team
                     </Text>
                     <div className="d-flex mt-1">
-                      {item.team.map((user) => (
-                        <Tooltip placement="top" title={user.title}>
+                      {item.team.map((user, idx) => (
+                        <Tooltip key={idx} placement="top" title={user.title}>
                           <Avatar
                             className="mx-1"
                             src={user.avatar}
