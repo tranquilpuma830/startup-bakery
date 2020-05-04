@@ -61,20 +61,92 @@ const Auction = ({ ...props }) => {
             <InvestorsList players={PLAYERS} />
           </Card>
         </Sider>
-        <Content className="container">
-          <div class="row bets__card">
-            <div class="col bets__profile">
-              <Avatar src={topPlayer.avatar} size={156} />
-              <h3>Дон Хакатон</h3>
-              <p>CEO</p>
-            </div>
-            <div class="col">
-              <h3>StartupBakery</h3>
-              <p>Описание проекта</p>
-              <p>Кто делает проект</p>
-              <p>Счетчки после старта реализации</p>
 
-              <a className="btn btn-primary mb-3 float-right">Поднять ставку</a>
+        <Content className="container auction__top">
+          <div class="row bets__card">
+            <div class="col-8 bets__project">
+              <div className="bets__project__info">
+                <div class="row">
+                  <div class="col-4">
+                    <img width="150px" src="/icons/pizza.svg" />
+                  </div>
+                  <div class="col-8 text-left">
+                    <p>Startup Bakery</p>
+                    <p>
+                      Startup Bakery - уникальная площадка, где каждый может
+                      разместить свою проектную идею и довести ее результата.
+                      Присоединяйся к Startup Bakery, и с нашей помощью ты
+                      сможешь “выпечь” свой стартап, пройдя самые трудные этапы,
+                      на которых чаще всего перегорают проекты.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="container bets__project__menu">
+                <div class="row">
+                  <div class="col-4">
+                    <div className="bets__project__title">Статус проекта</div>
+                  </div>
+                  <div class="col-8">
+                    Команда распределила <b>задачи</b>, проверила
+                    <b>гипотезы</b> и приступает к разработке <b>прототипа</b>.
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <div className="bets__project__title">Таймер</div>
+                  </div>
+                  <div class="col-8">
+                    <p>
+                      До следующего раунда осталось:
+                      <span className="font-weight-bold">
+                        <Descriptions.Item label="Таймер">
+                          <small>
+                            <Countdown
+                              valueRender={(element) => {
+                                return (
+                                  <div>
+                                    <span className="font-weight-bold">
+                                      {element}
+                                    </span>
+                                  </div>
+                                );
+                              }}
+                              valueStyle={{ fontSize: "small" }}
+                              value={TIMER_DEADLINE}
+                              format="D дней H часов m минут s"
+                            />
+                          </small>
+                        </Descriptions.Item>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">
+                    <div className="bets__project__title">Команда</div>
+                  </div>
+                  <div class="col-8">
+                    <b>Seals</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 bets__profile">
+              <div class="bets__title">Топ инвестор</div>
+              <Avatar
+                src="https://www.tourdom.ru/upload/iblock/e46/e469d6c078fdc6d46886f51c3d8f0737.jpeg"
+                size={156}
+              />
+              <div className="bets__profile__content">
+                <h5>Билл Гейтс</h5>
+                <p>CEO Microsoft</p>
+                <div className="bets__max">
+                  <b> Сумма инвестиций: </b> {topPlayer.amount}$
+                </div>
+              </div>
+              <a className="btn btn-primary mb-4">Поднять ставку</a>
             </div>
           </div>
         </Content>

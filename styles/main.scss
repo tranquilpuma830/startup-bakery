@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
 
 @import 'core/variables';
 @import '~bootstrap/scss/bootstrap';
@@ -7,6 +8,16 @@
 // To make full-height page
 #__next {
   min-height: 100% !important;
+}
+
+
+body {
+  font-family: Montserrat;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+
 }
 
 .border-thick {
@@ -26,6 +37,7 @@
   background-color: $primary-light !important;
 }
 
+.bg,
 .bg-filled,
 .bg-white-filled,
 .bg-half-filled,
@@ -33,6 +45,10 @@
 .bg-guy {
   background: no-repeat !important;
   background-size: cover !important;
+}
+
+.bg {
+  background-image: url('/backgrounds/background.svg') !important;
 }
 
 .bg-filled {
@@ -68,8 +84,7 @@
   margin: 10% auto;
   border-radius: 20px;
   background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9,
-    -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 
   .form__block {
     margin: 100px 50px 80px 50px;
@@ -93,8 +108,8 @@
 
 .login__data {
   border-radius: 50px;
-  border: 1px solid #FDB15D;
-  background-color: #FAFADC;
+  border: 1px solid #fdb15d;
+  background-color: #fafadc;
 }
 
 .ant-btn-primary {
@@ -138,16 +153,120 @@ a.btn-primary {
 }
 
 .bets__card {
-  width: 80%;
+  width: 95%;
   margin: 5% auto;
+  text-align: center;
   border-radius: 20px;
-  background: #ffffff;
+  background: white;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 }
+
 
 .bets__profile {
   padding: 20px;
+  padding: 5%;
+  text-align: center;
+  background: rgba(253, 177, 93, 0.12);
+
+  a {
+    width: 230px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+  }
+
+}
+
+.bets__title {
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-bottom: 10%;
+  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+}
+
+.bets__profile__content {
+  margin: 20px;
+
+  h5 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.bets__project {
+  padding: 5%;
+}
+
+.bets__project__menu {
+  padding: 5% 2%;
+  text-align: left;
+
+  .row {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.bets__project__title {
+  color: white;
+  width: 80%;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 7% 0;
+  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+}
+
+
+.bets__max {
+  background: white;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 5% 2%;
 }
 
 .bets__content {
   padding: 10% 5%;
+}
+
+.btn-gradient {
+  background: linear-gradient(270deg, $primary 0%, $primary-light 100%);
+  border: none !important;
+  border-radius: 23.5px;
+}
+
+.card-empty {
+  background: #ffffff;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+.lead-land-text {
+  font-size: 18px !important;
+}
+
+.lead-land-title {
+  font-size: 48px !important;
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+
+  .lead-land-text,
+  .btn-gradient {
+    font-size: 14px !important;
+  }
+
+  .lead-land-title {
+    font-size: 28px !important;
+  }
 }

@@ -1,4 +1,4 @@
-const AVATARS_PATH = '/investors_avatars';
+const AVATARS_PATH = "/investors_avatars";
 const investor_avatars_path = {
   vova: `${AVATARS_PATH}/vova.jpg`,
   don: `${AVATARS_PATH}/don.jpg`,
@@ -8,25 +8,25 @@ const investor_avatars_path = {
 
 const PLAYERS = [
   {
-    title: 'Дон Хакатон',
-    amount: 30000000,
-    rating: 'Advanced',
+    title: "Дон Хакатон",
+    amount: 3000000,
+    rating: "Advanced",
     avatar: investor_avatars_path.don,
   },
   {
-    title: 'Владимир Лунёв',
+    title: "Владимир Лунёв",
     amount: 2000000,
-    rating: 'Advanced',
+    rating: "Advanced",
     avatar: investor_avatars_path.vova,
   },
   {
-    title: 'Даниил Рублёв',
+    title: "Даниил Рублёв",
     amount: 1000000,
-    rating: 'Advanced',
+    rating: "Advanced",
     avatar: investor_avatars_path.danil,
   },
 ];
 
 module.exports = {
-    PLAYERS,
-}
+  PLAYERS,
+};

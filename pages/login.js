@@ -14,7 +14,7 @@ const Login = () => {
             <div className="col form__block">
               <form>
                 <div className="form-group">
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     className="form-control login__data"
@@ -23,7 +23,7 @@ const Login = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label for="password">Пароль</label>
+                  <label htmlFor="password">Пароль</label>
                   <input
                     type="password"
                     className="form-control login__data"
@@ -31,9 +31,12 @@ const Login = () => {
                     placeholder="password"
                   />
                 </div>
-                <Link href="/ideas">
-                  <a className="btn btn-primary mb-3 float-right">Войти</a>
-                </Link>
+                <button
+                  type="submit"
+                  className="btn btn-primary mb-3 float-right"
+                >
+                  Войти
+                </button>
               </form>
             </div>
           </div>
