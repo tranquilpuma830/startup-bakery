@@ -10,14 +10,12 @@
   min-height: 100% !important;
 }
 
-
 body {
-  font-family: Montserrat;
+  font-family: Montserrat !important;
 }
 
 .no-shadow {
   box-shadow: none !important;
-
 }
 
 .border-thick {
@@ -28,7 +26,7 @@ body {
   font-weight: bold;
   font-size: 18px;
   margin: 20px 0;
-  color: #455A64;
+  color: #455a64;
 }
 
 .bg-lightest {
@@ -143,7 +141,7 @@ a.btn-primary {
 }
 
 .index__btn {
-  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+  background: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%);
   border-radius: 23.5px;
   font-weight: bold;
   text-transform: uppercase;
@@ -155,7 +153,7 @@ a.btn-primary {
 }
 
 .auction__top {
-  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+  background: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%);
 }
 
 .bets__card {
@@ -166,7 +164,6 @@ a.btn-primary {
   background: white;
   box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.75);
 }
-
 
 .bets__profile {
   padding: 20px;
@@ -180,9 +177,8 @@ a.btn-primary {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 14px;
-    background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+    background: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%);
   }
-
 }
 
 .bets__title {
@@ -193,7 +189,7 @@ a.btn-primary {
   text-transform: uppercase;
   padding: 10px;
   margin-bottom: 10%;
-  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+  background: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%);
 }
 
 .bets__profile__content {
@@ -229,9 +225,8 @@ a.btn-primary {
   font-size: 12px;
   border-radius: 5px;
   padding: 7% 0;
-  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+  background: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%);
 }
-
 
 .bets__max {
   background: white;
@@ -250,7 +245,7 @@ a.btn-primary {
 
 .btn-gradient {
   background: linear-gradient(270deg, $primary 0%, $primary-light 100%);
-  border: none !important;
+  border: 1px solid transparent !important;
   border-radius: 23.5px;
   color: white !important;
 }
@@ -259,7 +254,6 @@ a.btn-primary {
   background: none;
   color: $primary !important;
   border: 1px solid $primary !important;
-  margin: -1px !important;
 }
 
 .card-empty {
@@ -375,7 +369,6 @@ a.btn-primary {
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
-
   .lead-land-text,
   .btn-gradient {
     font-size: 14px !important;
@@ -384,4 +377,11 @@ a.btn-primary {
   .lead-land-title {
     font-size: 28px !important;
   }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #de6a1e !important;
+  border: #de6a1e !important;
+  background-color: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%) !important;
+  border: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%) !important;
 }

@@ -1,3 +1,86 @@
 .flex-1 {
     flex: 1;
 }
+
+
+.project__bg {
+    background-image: url('/backgrounds/background.svg') !important;
+    background-size: cover;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 400px;
+}
+
+
+
+.team {
+    // width: 50%;
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-avatar {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+
+    img {
+        object-fit: cover;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+    }
+
+    h4 {
+        max-width: 200px;
+    }
+}
+
+.ant-tabs-tab {
+    padding: 15px 0 !important;
+    width: 180px !important;
+    margin: 15px 15px !important;
+    border: 2px solid #de6a1e;
+    color: #de6a1e;
+    border-radius: 8px !important;
+    font-weight: 900;
+
+    &:hover {
+        color: #de6a1e !important;
+    }
+}
+
+.ant-tabs-tab-active {
+    background: linear-gradient(90deg,
+            rgba(253, 177, 93, 1) 0%,
+            rgba(222, 106, 30, 1) 100%);
+    border: none;
+    font-weight: 900;
+    color: white !important;
+
+    &:hover {
+        color: white !important;
+    }
+}
+
+.ant-tabs-ink-bar {
+    background-color: #de6a1e !important;
+}
+
+.ant-progress-inner {
+    height: 40px !important;
+}
+
+.ant-progress-bg {
+    height: 100% !important;
+}
+
+.check {
+    font-size: 18px;
+}
