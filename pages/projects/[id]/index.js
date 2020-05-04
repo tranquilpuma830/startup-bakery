@@ -129,7 +129,7 @@ const Project = () => {
 
                   <div className="m-3">
                     <div>
-                      <Checkbox className="check" checked>
+                      <Checkbox color className="check" checked>
                         Сформировать команду
                       </Checkbox>
                     </div>
