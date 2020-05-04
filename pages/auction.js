@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { Descriptions, Avatar, Card, List, Statistic, Layout } from 'antd';
-import { PLAYERS } from '../constants/users';
+import { Descriptions, Avatar, Card, List, Statistic, Layout, Skeleton } from 'antd';
 import Page from '../containers/Page';
 import * as firebase from 'firebase';
 import '../styles/main.scss';
+
 
 const { Sider, Content } = Layout;
 const { Countdown } = Statistic;
 
 const TIMER_DEADLINE = Date.now() + 1000 * 60 * 60 * 2;
 
-const topRaisedPlayer = PLAYERS.reduce(function (prev, current) {
-  return prev.amount > current.amount ? prev : current;
-});
-
 const sortByAmount = (toSort) => toSort.sort((a, b) => (a.amount < b.amount ? 1 : -1));
 
-const InvestorsList = ({ players }) => {
+const InvestorsList = ({ players, isLoading }) => {
   return (
     <List
       itemLayout="horizontal"
-      dataSource={players}
+      dataSource={isLoading ? [] : players}
       renderItem={(item, idx) => (
-        <List.Item>
-          <List.Item.Meta
-            avatar={<Avatar src={item.avatar} />}
-            title={item.title}
-            description={item.amount + "$"}
-          />
+        <List.Item key={idx}>
+          {isLoading ? (
+            <List.Item.Meta
+              avatar={<Skeleton.Avatar active />}
+              title={<Skeleton active />}
+              description={<Skeleton active />}
+            />
+          ) : (
+            <List.Item.Meta avatar={<Avatar src={item.avatar} />} title={item.title} description={item.amount + '$'} />
+          )}
         </List.Item>
       )}
     />
@@ -35,8 +35,9 @@ const InvestorsList = ({ players }) => {
 };
 
 const Auction = () => {
-  const [topPlayer, setTopPlayer] = useState(topRaisedPlayer);
-  const [players, setPlayers] = useState(sortByAmount(PLAYERS));
+  const [topPlayer, setTopPlayer] = useState();
+  const [players, setPlayers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   let player = players.find((p) => p.title === 'Владимир Лунёв');
 
@@ -48,6 +49,7 @@ const Auction = () => {
         .once('value')
         .then((snapshot) => {
           setPlayers(sortByAmount(snapshot.val()));
+          setIsLoading(false);
         });
     }, 10);
   }, []);
@@ -62,14 +64,14 @@ const Auction = () => {
     const newPlayers = [...players];
     setPlayers(sortByAmount(newPlayers));
   };
-
+  //<Skeleton active />
   return (
     <Page>
       <Layout className="bg-white">
         <Sider id="sidebar">
           <Card className="border-bottom-0 h-100 rounded-0">
             <h5 className="auction__sidebar_title">Инвесторы </h5>
-            <InvestorsList players={players} />
+            <InvestorsList players={players} isLoading={isLoading} />
           </Card>
         </Sider>
 
@@ -84,11 +86,9 @@ const Auction = () => {
                   <div className="col-8 text-left">
                     <b>Startup Bakery</b>
                     <p>
-                      Startup Bakery - уникальная площадка, где каждый может
-                      разместить свою проектную идею и довести ее результата.
-                      Присоединяйся к Startup Bakery, и с нашей помощью ты
-                      сможешь “выпечь” свой стартап, пройдя самые трудные этапы,
-                      на которых чаще всего перегорают проекты.
+                      Startup Bakery - уникальная площадка, где каждый может разместить свою проектную идею и довести ее
+                      результата. Присоединяйся к Startup Bakery, и с нашей помощью ты сможешь “выпечь” свой стартап,
+                      пройдя самые трудные этапы, на которых чаще всего перегорают проекты.
                     </p>
                   </div>
                 </div>
@@ -142,20 +142,31 @@ const Auction = () => {
             </div>
             <div className="col-4 bets__profile">
               <div className="bets__title">Топ инвестор</div>
-              <Avatar src={topPlayer.avatar} size={156} />
-              <div className="bets__profile__content">
-                <h5>{topPlayer.title}</h5>
-                <p>{topPlayer.role}</p>
-                <div className="bets__max">
-                  <b> Сумма инвестиций: </b> {topPlayer.amount}$
-                </div>
-              </div>
-              <a
-                onClick={onRaiseBet}
-                className="btn btn-primary btn-gradient w-auto mb-4 px-lg-3 px-auto"
-              >
-                Поднять ставку
-              </a>
+              {!isLoading ? (
+                <>
+                  <Avatar src={topPlayer.avatar} size={156} />
+                  <div className="bets__profile__content">
+                    <h5>{topPlayer.title}</h5>
+                    <p>{topPlayer.role}</p>
+                    <div className="bets__max">
+                      <b> Сумма инвестиций: </b> {topPlayer.amount}$
+                    </div>
+                  </div>
+                  <a onClick={onRaiseBet} className="btn btn-primary btn-gradient w-auto mb-4 px-lg-3 px-auto">
+                    Поднять ставку
+                  </a>
+                </>
+              ) : (
+                <>
+                  <Skeleton.Avatar active size={156} />
+                  <div className="bets__profile__content">
+                    <h5>
+                      <Skeleton active />
+                    </h5>
+                  </div>
+                  <Skeleton.Button active shape="round" className="w-100" />
+                </>
+              )}
             </div>
           </div>
         </Content>
