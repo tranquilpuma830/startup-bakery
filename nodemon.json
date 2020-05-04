@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "watch": ["server", "static"],
+  "ignore": ["node_modules", ".next"],
+  "exec": "node server",
+  "ext": "js"
+}
