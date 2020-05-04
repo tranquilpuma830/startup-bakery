@@ -143,6 +143,12 @@ a.btn-primary {
   border-radius: 23.5px;
   color: white !important;
 }
+.btn-gradient:hover {
+  background: none;
+  color: $primary !important;
+  border: 2px solid $primary !important;
+  margin: -1px !important;
+}
 
 .card-empty {
   background: #ffffff;

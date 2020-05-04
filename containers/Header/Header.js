@@ -6,7 +6,7 @@ const Header = ({ forLanding }) => {
   return (
     <nav className={`navbar ${forLanding ? 'navbar-expand-sm' : 'navbar-expand-md'}`}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img src="/logo.svg" className="mr-3" style={{ width: '20vw' }} />
         </a>
         <button
