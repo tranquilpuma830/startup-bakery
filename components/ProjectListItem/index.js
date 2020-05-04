@@ -19,7 +19,7 @@ export default function ProjectListItem({
   const incrementApproves = () => setApprovs((a) => ++a);
 
   return (
-    <List.Item className="project-list-item border-bottom-0 px-4">
+    <List.Item className="project-list-item px-4">
       <div className="row">
         <div className="col-12">
           <div className="row">
