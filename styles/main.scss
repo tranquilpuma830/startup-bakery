@@ -111,6 +111,9 @@
 a {
   color: $primary !important;
 }
+a.btn-primary {
+  color: white !important;
+}
 
 .btn-outline-primary:hover { 
   color: white !important;

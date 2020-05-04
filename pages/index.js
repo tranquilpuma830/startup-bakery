@@ -28,6 +28,9 @@ export default function Home() {
             risus et, pretium felis. Etiam ut est id risus tincidunt facilisis. Vestibulum viverra libero suscipit nisi
             tempus porta. Quisque ullamcorper in tortor id feugiat. Aliquam facilisis eu leo nec fermentum.
           </Text>
+          <Link href='/ideas'>
+            <a className='btn btn-primary w-50 mt-4 d-block'>Текст</a>
+          </Link>
         </div>
         <div className='my-auto w-50 bg-guy' style={{ height: '90vh' }} />
       </Content>
