@@ -1,6 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { Input, Typography, Layout, Form } from "antd";
+import React from 'react';
+import Link from 'next/link';
+import Header from '../containers/Header/Header';
+import { Input, Typography, Layout, Form } from 'antd';
 
 const { Content } = Layout;
 const { Text, Title } = Typography;
@@ -15,39 +16,10 @@ const tailLayout = {
 
 export default function Home() {
   return (
-    <Layout className="cover-container d-flex h-100 mx-auto flex-column bg-white bg-half-filled">
-      <header className="masthead mb-auto">
-        <div className="inner bg-white p-3">
-          <nav className="d-flex nav nav-masthead justify-content-between align-items-center font-weight-bold">
-            <a className="navbar-brand" href="#">
-              <img
-                src="/logo.svg"
-                width="60"
-                height="60"
-                className="d-inline-block"
-                alt="Startup bakery"
-              />
-              StartupBakery
-            </a>
-            <div className="d-flex w-auto float-right text-secondary">
-              <a className="text-secondary nav-link" href="#">
-                Курсы
-              </a>
-              <a className="text-secondary nav-link" href="#">
-                Команды
-              </a>
-              <a className="text-secondary nav-link" href="#">
-                Новости
-              </a>
-              <a className="text-secondary nav-link" href="#">
-                Вакансии
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <Content className='d-flex p-4 ml-2 align-items-center bg-guy'>
-        <div className='my-auto w-25'>
+    <Layout className='cover-container d-flex h-100 mx-auto flex-column bg-white-filled'>
+      <Header />
+      <Content className='d-flex px-4 align-items-center'>
+        <div className='my-auto w-50 px-2'>
           <Title className=''>Lorem ipsum</Title>
 
           <Text>
@@ -57,6 +29,7 @@ export default function Home() {
             tempus porta. Quisque ullamcorper in tortor id feugiat. Aliquam facilisis eu leo nec fermentum.
           </Text>
         </div>
+        <div className='my-auto w-50 bg-guy' style={{ height: '90vh' }} />
       </Content>
     </Layout>
   );
