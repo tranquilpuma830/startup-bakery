@@ -5,6 +5,10 @@
   max-width: 600px;
   transition: box-shadow 500ms;
   transition: background-color 500ms;
+  
+  .project-list-item__image {
+    transition: all 200ms;
+  }
 
   &:hover {
     cursor: pointer;
@@ -25,7 +29,6 @@
     background-color: white;
     img {
       width: 100%;
-
     }
   }
 }
