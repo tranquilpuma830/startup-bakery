@@ -57,12 +57,13 @@ const Auction = ({ ...props }) => {
     <Page>
       <Layout className="bg-white">
         <Sider id="sidebar">
-          <Card title="Инвесторы" className="border-bottom-0 h-100 rounded-0">
+          <Card className="border-bottom-0 h-100 rounded-0">
+            <h5 className="auction__sidebar_title"> Инвесторы </h5>
             <InvestorsList players={PLAYERS} />
           </Card>
         </Sider>
 
-        <Content className="container auction__top">
+        <Content className="auction__top">
           <div class="row bets__card">
             <div class="col-8 bets__project">
               <div className="bets__project__info">
@@ -146,7 +147,9 @@ const Auction = ({ ...props }) => {
                   <b> Сумма инвестиций: </b> {topPlayer.amount}$
                 </div>
               </div>
-              <a className="btn btn-primary mb-4">Поднять ставку</a>
+              <a onClick={onRaiseBet} className="btn btn-primary mb-4">
+                Поднять ставку
+              </a>
             </div>
           </div>
         </Content>

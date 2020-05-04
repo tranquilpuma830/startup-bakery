@@ -24,9 +24,16 @@ body {
   border-width: 14px !important;
 }
 
+.auction__sidebar_title {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 20px 0;
+  color: #455A64;
+}
+
 .ant-list-item,
 .border-lightest {
-  border-color: $primary-lightest !important;
+  border-color: white !important;
 }
 
 .bg-lightest {
@@ -125,7 +132,7 @@ body {
 }
 
 a {
-  color: $primary !important;
+  color: $primary;
 }
 
 a.btn-primary {
@@ -152,13 +159,17 @@ a.btn-primary {
   border-color: white;
 }
 
+.auction__top {
+  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+}
+
 .bets__card {
-  width: 95%;
+  width: 80%;
   margin: 5% auto;
   text-align: center;
   border-radius: 20px;
   background: white;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.75);
 }
 
 
@@ -178,6 +189,7 @@ a.btn-primary {
   }
 
 }
+
 
 .bets__title {
   width: 80%;
@@ -238,10 +250,22 @@ a.btn-primary {
   padding: 10% 5%;
 }
 
+.btn-rounded {
+  border-radius: 23.5px;
+}
+
 .btn-gradient {
   background: linear-gradient(270deg, $primary 0%, $primary-light 100%);
   border: none !important;
   border-radius: 23.5px;
+  color: white !important;
+}
+
+.btn-gradient:hover {
+  background: none;
+  color: $primary !important;
+  border: 2px solid $primary !important;
+  margin: -1px !important;
 }
 
 .card-empty {
@@ -255,7 +279,7 @@ a.btn-primary {
 }
 
 .lead-land-title {
-  font-size: 48px !important;
+  font-size: 40px !important;
 }
 
 // Medium devices (tablets, less than 992px)
