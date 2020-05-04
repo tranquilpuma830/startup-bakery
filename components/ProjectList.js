@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Button, List } from "antd";
 
 import ProjectListItem from "./ProjectListItem";
@@ -24,7 +25,7 @@ function ProjectList({ projects, count }) {
       loadMore={<LoadMoreSection />}
       itemLayout="horizontal"
       dataSource={projects}
-      renderItem={(item) => <ProjectListItem {...item} />}
+      renderItem={(item) => <ProjectListItem key={item.id} {...item} />}
     />
   );
 }
