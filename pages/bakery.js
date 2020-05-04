@@ -27,10 +27,7 @@ export default function Bakery() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 py-3 mb-3">
-            <PageHeader
-              title="Пекарня"
-              subTitle="Sollicitant homines non sunt nisi quam formae rerum principiis opiniones."
-            >
+            <PageHeader title="Пекарня" subTitle="">
               <div className="row">
                 <div className="col-12 col-sm-4">
                   <Select defaultValue="lucy" className="w-100">

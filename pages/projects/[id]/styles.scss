@@ -2,12 +2,20 @@
     flex: 1;
 }
 
+
+.project__bg {
+    background-image: url('/backgrounds/background.svg') !important;
+    background-size: cover;
+}
+
 .team-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 400px;
 }
+
+
 
 .team {
     // width: 50%;

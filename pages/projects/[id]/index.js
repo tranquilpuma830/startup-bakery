@@ -54,12 +54,12 @@ const Project = () => {
 
   return (
     <Page>
-      <Content className="fr">
+      <Content className="project__bg">
         <div className="container project">
           <div
             className="text-center p-5 bg-white"
             style={{
-              boxShadow: "0px 0px 10px 5px #e3e3e3",
+              boxShadow: "10px 10px 20px -5px rgba(0, 0, 0, 0.75)",
               borderRadius: "10px",
             }}
           >
