@@ -1,0 +1,179 @@
+{
+  "users": [
+    {
+      "title": "Дон Хакатон",
+      "amount": 2999980,
+      "rating": "Advanced",
+      "role": "CEO Seals",
+      "avatar": "/investors_avatars/don.jpg"
+    },
+    {
+      "title": "Владимир Лунёв",
+      "amount": 2036200,
+      "rating": "Advanced",
+      "role": "CEO Microsoft",
+      "avatar": "/investors_avatars/vova.jpg"
+    },
+    {
+      "title": "Даниил Рублёв",
+      "amount": 1006730,
+      "rating": "Advanced",
+      "role": "CEO Microsoft",
+      "avatar": "/investors_avatars/danil.jpg"
+    },
+    {
+      "title": "Марк Поповиченко",
+      "amount": 30000000,
+      "rating": "Advanced",
+      "role": "CEO Microsoft",
+      "avatar": "/investors_avatars/mark.jpg"
+    },
+    {
+      "title": "Билл Гейтс",
+      "amount": 3000000,
+      "rating": "Advanced",
+      "role": "CEO Microsoft",
+      "avatar": "https://www.tourdom.ru/upload/iblock/e46/e469d6c078fdc6d46886f51c3d8f0737.jpeg"
+    }
+  ],
+  "ideas": [
+    {
+      "id": 4,
+      "projectName": "Startup Bakery",
+      "logoUrl": "/project-logos/startup-bakery.svg",
+      "description": "Уникальная площадка, где каждый может разместить свою проектную идею и довести ее результата. Здесь каждый сможет “выпечь” свой стартап-проект.",
+      "approval": 153,
+      "progress": 10,
+      "team": [
+        {
+          "title": "Дон Хакатон",
+          "amount": 2999980,
+          "rating": "Advanced",
+          "role": "CEO Seals",
+          "avatar": "/investors_avatars/don.jpg"
+        },
+        {
+          "title": "Владимир Лунёв",
+          "amount": 2036200,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/vova.jpg"
+        },
+        {
+          "title": "Даниил Рублёв",
+          "amount": 1006730,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/danil.jpg"
+        },
+        {
+          "title": "Марк Поповиченко",
+          "amount": 30000000,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/mark.jpg"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "projectName": "Work Balance",
+      "logoUrl": "/project-logos/work-balance.png",
+      "description": "Уникальная платформа по анализу открытых данных для отображения вакансий по регионам. Сервис позволяет найти работу в другом регионе еще до переезда. ",
+      "approval": 202,
+      "progress": 30,
+      "team": [
+        {
+          "title": "Дон Хакатон",
+          "amount": 2999980,
+          "rating": "Advanced",
+          "role": "CEO Seals",
+          "avatar": "/investors_avatars/don.jpg"
+        },
+        {
+          "title": "Владимир Лунёв",
+          "amount": 2036200,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/vova.jpg"
+        },
+        {
+          "title": "Даниил Рублёв",
+          "amount": 1006730,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/danil.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "projectName": "CyberLexa",
+      "logoUrl": "/project-logos/cyperlexa.png",
+      "description": "Дружелюбный серсис по обучению кибербезопасности. Практические курсы, которые охватывают все сферы информационной безопасности.",
+      "approval": 993,
+      "progress": 50,
+      "team": [
+        {
+          "title": "Дон Хакатон",
+          "amount": 2999980,
+          "rating": "Advanced",
+          "role": "CEO Seals",
+          "avatar": "/investors_avatars/don.jpg"
+        },
+        {
+          "title": "Владимир Лунёв",
+          "amount": 2036200,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/vova.jpg"
+        },
+        {
+          "title": "Даниил Рублёв",
+          "amount": 1006730,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/danil.jpg"
+        },
+        {
+          "title": "Марк Поповиченко",
+          "amount": 30000000,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/mark.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "projectName": "SaveNow",
+      "logoUrl": "/project-logos/save-now.png",
+      "description": "Сервис для прямой доставки товаров без посредников. Возможность найма исполнителя для доставки товара за плату.",
+      "approval": 47,
+      "progress": 80,
+      "team": [
+        {
+          "title": "Дон Хакатон",
+          "amount": 2999980,
+          "rating": "Advanced",
+          "role": "CEO Seals",
+          "avatar": "/investors_avatars/don.jpg"
+        },
+        {
+          "title": "Владимир Лунёв",
+          "amount": 2036200,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/vova.jpg"
+        },
+        {
+          "title": "Даниил Рублёв",
+          "amount": 1006730,
+          "rating": "Advanced",
+          "role": "CEO Microsoft",
+          "avatar": "/investors_avatars/danil.jpg"
+        }
+      ]
+    }
+  ]
+}

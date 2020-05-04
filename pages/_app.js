@@ -2,7 +2,7 @@ import "../styles/main.scss";
 import "../styles/antd-custom.less";
 
 import React, { useEffect } from "react";
-import * as firebase from "firebase/app";
+import * as firebase from "firebase";
 import * as NProgress from "nprogress";
 import { Router } from "next/router";
 

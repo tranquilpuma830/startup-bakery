@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Button, Descriptions, Avatar, Card, Divider, List, Typography, Statistic, Layout } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Descriptions, Avatar, Card, List, Statistic, Layout } from 'antd';
 import { PLAYERS } from '../constants/users';
 import Page from '../containers/Page';
+import * as firebase from 'firebase';
 import '../styles/main.scss';
 
 const { Sider, Content } = Layout;
-const { Title } = Typography;
 const { Countdown } = Statistic;
 
 const TIMER_DEADLINE = Date.now() + 1000 * 60 * 60 * 2;
@@ -13,6 +13,8 @@ const TIMER_DEADLINE = Date.now() + 1000 * 60 * 60 * 2;
 const topRaisedPlayer = PLAYERS.reduce(function (prev, current) {
   return prev.amount > current.amount ? prev : current;
 });
+
+const sortByAmount = (toSort) => toSort.sort((a, b) => (a.amount < b.amount ? 1 : -1));
 
 const InvestorsList = ({ players }) => {
   return (
@@ -30,17 +32,31 @@ const InvestorsList = ({ players }) => {
 
 const Auction = () => {
   const [topPlayer, setTopPlayer] = useState(topRaisedPlayer);
-  const [players, setPlayers] = useState(PLAYERS.sort((a, b) => (a.amount < b.amount ? 1 : -1)));
-  const player = players[1];
+  const [players, setPlayers] = useState(sortByAmount(PLAYERS));
+
+  let player = players.find((p) => p.title === 'Владимир Лунёв');
+
+  useEffect(() => {
+    setTimeout(() => {
+      firebase
+        .database()
+        .ref('/users')
+        .once('value')
+        .then((snapshot) => {
+          setPlayers(sortByAmount(snapshot.val()));
+        });
+    }, 10);
+  }, []);
+
+  useEffect(() => {
+    setTopPlayer(players[0]);
+  }, [players]);
 
   const onRaiseBet = () => {
-    const amount = player.amount + 1000;
-    players[1] = player;
-    setTopPlayer({
-      ...player,
-      amount,
-    });
-    setPlayers(players.sort((a, b) => (a.amount < b.amount ? 1 : -1)));
+    if (!player) return;
+    player.amount += 1000;
+    const newPlayers = [...players];
+    setPlayers(sortByAmount(newPlayers));
   };
 
   return (
@@ -86,25 +102,25 @@ const Auction = () => {
                     <div className="bets__project__title">Таймер</div>
                   </div>
                   <div className="col-8">
-                      До следующего раунда осталось:
-                      <span className="font-weight-bold">
-                        <Descriptions.Item label="Таймер">
-                          <small>
-                            <Countdown
-                              valueRender={(element) => {
-                                return (
-                                  <div>
-                                    <span className="font-weight-bold">{element}</span>
-                                  </div>
-                                );
-                              }}
-                              valueStyle={{ fontSize: 'small' }}
-                              value={TIMER_DEADLINE}
-                              format="D дней H часов m минут s"
-                            />
-                          </small>
-                        </Descriptions.Item>
-                      </span>
+                    До следующего раунда осталось:
+                    <span className="font-weight-bold">
+                      <Descriptions.Item label="Таймер">
+                        <small>
+                          <Countdown
+                            valueRender={(element) => {
+                              return (
+                                <div>
+                                  <span className="font-weight-bold">{element}</span>
+                                </div>
+                              );
+                            }}
+                            valueStyle={{ fontSize: 'small' }}
+                            value={TIMER_DEADLINE}
+                            format="D дней H часов m минут s"
+                          />
+                        </small>
+                      </Descriptions.Item>
+                    </span>
                   </div>
                 </div>
 

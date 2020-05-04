@@ -16,7 +16,6 @@ export default function ProjectListItem({
   children
 }) {
 
-  console.log(id);
   
   const [approvs, setApprovs] = useState(approval);
 
