@@ -128,7 +128,7 @@ const Auction = () => {
                   <b> Сумма инвестиций: </b> {topPlayer.amount}$
                 </div>
               </div>
-              <a onClick={onRaiseBet} className="btn btn-primary btn-gradient mb-4">
+              <a onClick={onRaiseBet} className="btn btn-primary btn-gradient w-auto mb-4 px-lg-3 px-auto">
                 Поднять ставку
               </a>
             </div>
