@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Descriptions, Avatar, Card, List, Statistic, Layout } from 'antd';
-import { PLAYERS } from '../constants/users';
-import Page from '../containers/Page';
-import * as firebase from 'firebase';
-import '../styles/main.scss';
+import React, { useState, useEffect } from "react";
+import { Descriptions, Avatar, Card, List, Statistic, Layout } from "antd";
+import { PLAYERS } from "../constants/users";
+import Page from "../containers/Page";
+import * as firebase from "firebase";
+import "../styles/main.scss";
 
 const { Sider, Content } = Layout;
 const { Countdown } = Statistic;
@@ -14,7 +14,8 @@ const topRaisedPlayer = PLAYERS.reduce(function (prev, current) {
   return prev.amount > current.amount ? prev : current;
 });
 
-const sortByAmount = (toSort) => toSort.sort((a, b) => (a.amount < b.amount ? 1 : -1));
+const sortByAmount = (toSort) =>
+  toSort.sort((a, b) => (a.amount < b.amount ? 1 : -1));
 
 const InvestorsList = ({ players }) => {
   return (
@@ -38,14 +39,14 @@ const Auction = () => {
   const [topPlayer, setTopPlayer] = useState(topRaisedPlayer);
   const [players, setPlayers] = useState(sortByAmount(PLAYERS));
 
-  let player = players.find((p) => p.title === 'Владимир Лунёв');
+  let player = players.find((p) => p.title === "Владимир Лунёв");
 
   useEffect(() => {
     setTimeout(() => {
       firebase
         .database()
-        .ref('/users')
-        .once('value')
+        .ref("/users")
+        .once("value")
         .then((snapshot) => {
           setPlayers(sortByAmount(snapshot.val()));
         });
@@ -116,11 +117,13 @@ const Auction = () => {
                             valueRender={(element) => {
                               return (
                                 <div>
-                                  <span className="font-weight-bold">{element}</span>
+                                  <span className="font-weight-bold">
+                                    {element}
+                                  </span>
                                 </div>
                               );
                             }}
-                            valueStyle={{ fontSize: 'small' }}
+                            valueStyle={{ fontSize: "small" }}
                             value={TIMER_DEADLINE}
                             format="D дней H часов m минут s секунд"
                           />
