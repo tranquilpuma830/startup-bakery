@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 const Header = ({ forLanding }) => {
   return (
-    <nav className={`navbar ${forLanding ? 'no-shadow bg-transparent navbar-expand-sm' : 'navbar-expand-lg'}`}>
+    <nav className={`navbar ${forLanding ? 'navbar-expand-sm' : 'navbar-expand-md'}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img width="100px" src="/icons/logo.svg" />
+          <img src="/logo.svg" className="mr-3" style={{ width: '20vw' }} />
         </a>
         <button
           className="navbar-toggler btn"
@@ -25,21 +25,22 @@ const Header = ({ forLanding }) => {
             <li className="nav-item active">
               <Link href="/ideas">
                 <a className="nav-link">
-                  <img width="20px" src="/icons/menu.svg" /> Меню <span className="sr-only">(current)</span>
+                  <img width="20px" src="/icons/menu.svg" className="mr-2" /> Меню{' '}
+                  <span className="sr-only">(current)</span>
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/#">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/bakery.svg" /> Пекарня
+                  <img width="20px" src="/icons/bakery.svg" className="mr-2" /> Пекарня
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/ideas">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/degustation.svg" />
+                  <img width="20px" src="/icons/degustation.svg" className="mr-2" />
                   Дегустация
                 </a>
               </Link>
@@ -47,7 +48,7 @@ const Header = ({ forLanding }) => {
             <li className="nav-item">
               <Link href="/auction">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/bets.svg" /> Аукцион
+                  <img width="20px" src="/icons/bets.svg" className="mr-2" /> Аукцион
                 </a>
               </Link>
             </li>
@@ -63,6 +64,7 @@ const Header = ({ forLanding }) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
+                <img width="25px" src="/icons/profile.svg" className="mr-2" />
                 Профиль
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
