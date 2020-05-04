@@ -29,4 +29,5 @@ const PLAYERS = [
 
 module.exports = {
   PLAYERS,
+  investor_avatars_path,
 };

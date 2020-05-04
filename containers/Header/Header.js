@@ -35,7 +35,7 @@ const Header = ({ forLanding }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/#">
+              <Link href="/bakery">
                 <a className="nav-link" href="#">
                   <img width="20px" src="/icons/bakery.svg" className="mr-2" />{" "}
                   Пекарня

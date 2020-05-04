@@ -1,10 +1,10 @@
 import React from "react";
-import Page from "../containers/Page";
-import "../styles/main.scss";
 import { Layout } from "antd";
 import Link from "next/link";
 
-const Login = () => {
+import Page from "../containers/Page";
+
+export default function Login() {
   return (
     <Page>
       <Layout className="bg-white">
@@ -44,6 +44,4 @@ const Login = () => {
       </Layout>
     </Page>
   );
-};
-
-export default Login;
+}
