@@ -1,5 +1,14 @@
 import React from "react";
-import { List, Select, Input, TimePicker, PageHeader } from "antd";
+import {
+  List,
+  PageHeader,
+  Typography,
+  Avatar,
+  Tooltip,
+  Select,
+  Input,
+  TimePicker,
+} from "antd";
 
 import ProjectListItem from "../components/ProjectListItem";
 import LoadMoreSection from "../components/LoadMoreSection";
@@ -9,9 +18,10 @@ import { IDEAS_MOCK } from "../constants/ideas";
 
 const { Search } = Input;
 const { RangePicker } = TimePicker;
+const { Text } = Typography;
 const { Option } = Select;
 
-export default function Ideas() {
+export default function Bakery() {
   return (
     <Page className="bg-white">
       <div className="container">
@@ -49,7 +59,43 @@ export default function Ideas() {
               loadMore={<LoadMoreSection />}
               itemLayout="horizontal"
               dataSource={IDEAS_MOCK}
-              renderItem={(item) => <ProjectListItem {...item} />}
+              renderItem={(item) => (
+                <ProjectListItem {...item}>
+                  <div className="py-3">
+                    <Text className="d-block" strong>
+                      Progress
+                    </Text>
+                    <div className="progress my-1" style={{ height: 20 }}>
+                      <div
+                        className="progress-bar progress-bar-striped progress-bar-animated"
+                        role="progressbar"
+                        style={{ width: item.progress + "%" }}
+                        aria-valuenow="10"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        {item.progress}%
+                      </div>
+                    </div>
+                    <Text className="d-block" strong>
+                      Teams
+                    </Text>
+                    <div className="d-flex mt-1">
+                      {item.team.map((user) => (
+                        <Tooltip placement="top" title={user.title}>
+                          <Avatar
+                            className="mx-1"
+                            src={user.avatar}
+                            size="large"
+                          >
+                            {user.title}
+                          </Avatar>
+                        </Tooltip>
+                      ))}
+                    </div>
+                  </div>
+                </ProjectListItem>
+              )}
             />
           </div>
         </div>

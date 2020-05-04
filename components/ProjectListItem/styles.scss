@@ -8,10 +8,8 @@
 
   &:hover {
     cursor: pointer;
-    background-color: white;
-    box-shadow: 10px 10px 20px rgba(69, 90, 100, 0.25);
     .project-list-item__image {
-      box-shadow: none;
+      box-shadow: 10px 10px 20px rgba(69, 90, 100, 0.25);
     }
   }
 
@@ -23,9 +21,8 @@
     width: 156px;
     height: 156px;
     border-radius: 38px;
-    box-shadow: 10px 10px 20px rgba(69, 90, 100, 0.25);
+    box-shadow: none;
     background-color: white;
-    transition: box-shadow 200ms;
     img {
       width: 100%;
 

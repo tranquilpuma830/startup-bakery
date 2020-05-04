@@ -12,17 +12,18 @@ export default function ProjectListItem({
   projectName,
   logoUrl,
   approval,
+  children
 }) {
   const [approvs, setApprovs] = useState(approval);
 
   const incrementApproves = () => setApprovs((a) => ++a);
 
   return (
-    <List.Item className="project-list-item border-bottom-0 ">
+    <List.Item className="project-list-item border-bottom-0 px-4">
       <div className="row">
         <div className="col-12">
           <div className="row">
-            <div className="col-4 d-flex justify-content-center">
+            <div className="col-4 d-flex justify-content-center align-items-center">
               <div className="project-list-item__image">
                 <img src={logoUrl} alt="" />
               </div>
@@ -34,6 +35,8 @@ export default function ProjectListItem({
               <div className="py-2">
                 <Text>{description}</Text>
               </div>
+
+              {children}
 
               <ul className="ant-list-item-action ml-0 mt-2">
                 <li className="ml-2 ml-sm-0 mb-2 mb-sm-0">
