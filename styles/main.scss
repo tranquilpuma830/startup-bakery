@@ -288,3 +288,12 @@ a.btn-primary {
     font-size: 28px !important;
   }
 }
+
+
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #DE6A1E  !important;
+  border: #DE6A1E  !important;
+  background-color: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%) !important;
+  border: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%) !important;
+}
