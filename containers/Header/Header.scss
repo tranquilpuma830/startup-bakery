@@ -1,0 +1,25 @@
+.navbar {
+  background-color: white;
+  box-shadow: 2px 13px 12px -16px rgba(0, 0, 0, 0.75);
+  z-index: 999;
+}
+
+.navbar-brand {
+  color: #FDB15D;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #6b6b6b;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  img {
+    margin: 3px;
+  }
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: #FDB15D;
+}

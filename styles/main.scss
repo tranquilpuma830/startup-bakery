@@ -33,15 +33,19 @@
   background: no-repeat !important;
   background-size: cover !important;
 }
+
 .bg-filled {
   background-image: url('/backgrounds/background-filled.svg') !important;
 }
+
 .bg-half-filled {
   background-image: url('/backgrounds/background-half-filled.svg') !important;
 }
+
 .bg-half {
   background-image: url('/backgrounds/background-half.svg') !important;
 }
+
 .bg-guy {
   background-size: contain !important;
   background-image: url('/backgrounds/some_guy.svg') !important;
@@ -54,9 +58,49 @@
   background-image: url('/backgrounds/Shape-0.svg');
 }
 
+.login {
+  width: 80%;
+  margin: 10% auto;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff;
+
+  .form__block {
+    margin: 100px 50px 80px 50px;
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  button {
+    margin-top: 30px;
+    width: 150px;
+  }
+}
+
+.login__img {
+  // Тет будет инфографика картинка но пока ее нет
+  background-image: url('/icons/background.png"');
+  background-size: cover;
+}
+
+.login__data {
+  border-radius: 50px;
+  border: 1px solid #FDB15D;
+  background-color: #FAFADC;
+}
+
 .ant-btn-primary {
   border-color: $primary !important;
   background-color: $primary !important;
+}
+
+.ant-btn:hover, .ant-btn:focus {
+  color: rgb(235, 142, 70) !important;
+  background-color: rgb(255, 255, 255) !important;
+  border-color: rgb(235, 142, 70) !important;
 }
 
 a {
