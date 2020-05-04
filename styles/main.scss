@@ -129,7 +129,7 @@ a.btn-primary {
 }
 
 .btn-gradient {
-  background: linear-gradient(270deg, #de6a1e 0%, #fdb15d 100%);
+  background: linear-gradient(270deg, $primary 0%, $primary-light 100%);
   border: none !important;
   border-radius: 23.5px;
 }
