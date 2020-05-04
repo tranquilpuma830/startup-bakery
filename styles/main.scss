@@ -255,6 +255,10 @@ a.btn-primary {
   color: $primary !important;
   border: 1px solid $primary !important;
 }
+.btn-primary.disabled {
+  background: linear-gradient(270deg, $primary-light 0%, $primary-lightest 100%);
+  color: #fff !important;
+}
 
 .card-empty {
   background: #ffffff;
