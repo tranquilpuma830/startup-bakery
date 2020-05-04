@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { Input, Typography, Layout, Form } from "antd";
 
 const { Content } = Layout;
@@ -16,32 +17,31 @@ const tailLayout = {
 export default function Home() {
   return (
     <Layout className="cover-container d-flex h-100 mx-auto flex-column bg-white bg-half-filled">
+      <Head>
+        <title>Startup | Bakery</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <header className="masthead mb-auto">
-        <div className="inner bg-white p-3">
+        <div className="inner  p-3">
           <nav className="d-flex nav nav-masthead justify-content-between align-items-center font-weight-bold">
-            <a className="navbar-brand" href="#">
-              <img
-                src="/logo.svg"
-                width="60"
-                height="60"
-                className="d-inline-block"
-                alt="Startup bakery"
-              />
-              StartupBakery
-            </a>
-            <div className="d-flex w-auto float-right text-secondary">
-              <a className="text-secondary nav-link" href="#">
-                Курсы
+            <div className="container-fluid">
+              <a className="navbar-brand" href="#">
+                <img width="100px" src="/icons/logo.svg" />
               </a>
-              <a className="text-secondary nav-link" href="#">
-                Команды
-              </a>
-              <a className="text-secondary nav-link" href="#">
-                Новости
-              </a>
-              <a className="text-secondary nav-link" href="#">
-                Вакансии
-              </a>
+              <div className="d-flex w-auto float-right text-secondary">
+                <a className="text-secondary nav-link" href="#">
+                  Курсы
+                </a>
+                <a className="text-secondary nav-link" href="#">
+                  Команды
+                </a>
+                <a className="text-secondary nav-link" href="#">
+                  Новости
+                </a>
+                <a className="text-secondary nav-link" href="#">
+                  Вакансии
+                </a>
+              </div>
             </div>
           </nav>
         </div>

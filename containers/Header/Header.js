@@ -25,7 +25,7 @@ const Header = () => {
             <li className="nav-item active">
               <Link href="/ideas">
                 <a className="nav-link">
-                  <img width="20px" src="/icons/menu.svg" /> Меню{" "}
+                  <img width="20px" src="/icons/menu.svg" /> Меню
                   <span className="sr-only">(current)</span>
                 </a>
               </Link>
