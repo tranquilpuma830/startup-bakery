@@ -1,10 +1,10 @@
-import React from "react";
-import "./Header.scss";
-import Link from "next/link";
+import React from 'react';
+import './Header.scss';
+import Link from 'next/link';
 
-const Header = () => {
+const Header = ({ forLanding }) => {
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className={`navbar ${forLanding ? 'no-shadow bg-transparent navbar-expand-sm' : 'navbar-expand-lg'}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img width="100px" src="/icons/logo.svg" />
@@ -25,8 +25,7 @@ const Header = () => {
             <li className="nav-item active">
               <Link href="/ideas">
                 <a className="nav-link">
-                  <img width="20px" src="/icons/menu.svg" /> Меню{" "}
-                  <span className="sr-only">(current)</span>
+                  <img width="20px" src="/icons/menu.svg" /> Меню <span className="sr-only">(current)</span>
                 </a>
               </Link>
             </li>
@@ -53,31 +52,33 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <span className="navbar-text">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Профиль
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
-                Action
+          {!forLanding && (
+            <span className="navbar-text">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Профиль
               </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </span>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a className="dropdown-item" href="#">
+                  Action
+                </a>
+                <a className="dropdown-item" href="#">
+                  Another action
+                </a>
+                <div className="dropdown-divider"></div>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </div>
+            </span>
+          )}
         </div>
       </div>
     </nav>
