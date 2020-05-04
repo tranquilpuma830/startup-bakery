@@ -46,8 +46,9 @@ const Auction = () => {
 
   function regUser(user) {
     if (players.length > 0) {
-      firebase.database().ref(`/users/${players.length}`).set(user);
+      return firebase.database().ref(`/users/${players.length}`).set(user);
     }
+    return null;
   }
 
   useEffect(() => {
@@ -63,20 +64,23 @@ const Auction = () => {
           setIsLoading(false);
         });
     }, 10);
-    
   }, []);
 
   useEffect(() => {
     setTopPlayer(sortByAmount(players)[0]);
-    if (user && !players.find((p) => p.email === player.email)) {
+    const autheduser = players.find((p) => p.email === player.email);
+    if (user && !autheduser) {
       regUser(player);
+    } else {
+      console.log('settingUser', autheduser);
+      player = autheduser;
     }
   }, [players]);
 
   const onRaiseBet = () => {
     if (!player) return;
     player.amount += 1000;
-    const newPlayers = players.map();
+    const newPlayers = [...players];
     setPlayers(sortByAmount(newPlayers));
   };
 
