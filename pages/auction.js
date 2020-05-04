@@ -23,7 +23,11 @@ const InvestorsList = ({ players }) => {
       dataSource={players}
       renderItem={(item, idx) => (
         <List.Item>
-          <List.Item.Meta avatar={<Avatar src={item.avatar} />} title={item.title} description={item.amount + '$'} />
+          <List.Item.Meta
+            avatar={<Avatar src={item.avatar} />}
+            title={item.title}
+            description={item.amount + "$"}
+          />
         </List.Item>
       )}
     />
@@ -78,11 +82,13 @@ const Auction = () => {
                     <img width="150px" src="/icons/pizza.svg" />
                   </div>
                   <div className="col-8 text-left">
-                    <p>Startup Bakery</p>
+                    <b>Startup Bakery</b>
                     <p>
-                      Startup Bakery - уникальная площадка, где каждый может разместить свою проектную идею и довести ее
-                      результата. Присоединяйся к Startup Bakery, и с нашей помощью ты сможешь “выпечь” свой стартап,
-                      пройдя самые трудные этапы, на которых чаще всего перегорают проекты.
+                      Startup Bakery - уникальная площадка, где каждый может
+                      разместить свою проектную идею и довести ее результата.
+                      Присоединяйся к Startup Bakery, и с нашей помощью ты
+                      сможешь “выпечь” свой стартап, пройдя самые трудные этапы,
+                      на которых чаще всего перегорают проекты.
                     </p>
                   </div>
                 </div>
@@ -116,7 +122,7 @@ const Auction = () => {
                             }}
                             valueStyle={{ fontSize: 'small' }}
                             value={TIMER_DEADLINE}
-                            format="D дней H часов m минут s"
+                            format="D дней H часов m минут s секунд"
                           />
                         </small>
                       </Descriptions.Item>
@@ -144,7 +150,10 @@ const Auction = () => {
                   <b> Сумма инвестиций: </b> {topPlayer.amount}$
                 </div>
               </div>
-              <a onClick={onRaiseBet} className="btn btn-primary btn-gradient w-auto mb-4 px-lg-3 px-auto">
+              <a
+                onClick={onRaiseBet}
+                className="btn btn-primary btn-gradient w-auto mb-4 px-lg-3 px-auto"
+              >
                 Поднять ставку
               </a>
             </div>
