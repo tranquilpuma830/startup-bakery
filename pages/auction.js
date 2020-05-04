@@ -120,7 +120,7 @@ const Auction = () => {
                             }}
                             valueStyle={{ fontSize: "small" }}
                             value={TIMER_DEADLINE}
-                            format="D дней H часов m минут s"
+                            format="D дней H часов m минут s секунд"
                           />
                         </small>
                       </Descriptions.Item>
