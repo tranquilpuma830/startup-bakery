@@ -7,7 +7,7 @@ import { IDEAS_MOCK } from "../constants/ideas";
 
 export default function Ideas() {
   return (
-    <Page className="bg-white">
+    <Page>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-8">

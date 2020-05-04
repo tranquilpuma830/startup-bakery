@@ -49,8 +49,8 @@ const Project = () => {
   ));
 
   return (
-    <Page>
-      <div className="container">
+    <Page className="bg-white">
+      <div className="container project">
         <div className="text-center">
           <Layout.Content>
             <Typography.Title className="mt-5">
