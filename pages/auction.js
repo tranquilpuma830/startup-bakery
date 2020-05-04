@@ -15,7 +15,7 @@ import Page from "../containers/Page";
 import "../styles/main.scss";
 
 const { Sider, Content } = Layout;
-const { Text, Title } = Typography;
+const { Title } = Typography;
 const { Countdown } = Statistic;
 
 const TIMER_DEADLINE = Date.now() + 1000 * 60 * 60 * 2;

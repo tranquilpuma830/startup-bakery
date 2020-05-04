@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import { Typography, Layout } from "antd";
+
 import Header from "../containers/Header/Header";
-import "../styles/main.scss";
-import { Input, Typography, Layout, Form } from "antd";
 
 const { Content } = Layout;
-const { Text, Title } = Typography;
+const { Title } = Typography;
 
 export default function Home() {
   return (

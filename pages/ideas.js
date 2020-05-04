@@ -18,7 +18,7 @@ export default function Ideas() {
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 py-3 mb-3">
             <PageHeader
-              title="Пекарня"
+              title="Маню"
               subTitle="Sollicitant homines non sunt nisi quam formae rerum principiis opiniones."
             >
               <div className="row">
