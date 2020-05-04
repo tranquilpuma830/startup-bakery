@@ -17,12 +17,7 @@ ApprovalBtn.defaultProps = {
   count: 0,
 };
 
-export default function ProjectListItem({
-  loadin,
-  description,
-  projectName,
-  logoUrl,
-}) {
+export default function ProjectListItem({ description, projectName, logoUrl, approval }) {
   const ProjectItemAvatar = (
     <Fragment>
       <img className="project-list-item__image" src={logoUrl} />
@@ -58,15 +53,15 @@ export default function ProjectListItem({
   return (
     <Fragment>
       <List.Item
-        className="border-bottom-0"
-        actions={[<ApprovalBtn count={34} />]}
-      >
-        <List.Item.Meta
-          avatar={ProjectItemAvatar}
-          title={ProjectTitle}
-          description={ProjectDescription}
-        />
-      </List.Item>
+          className="border-bottom-0"
+          actions={[<ApprovalBtn count={approval} />]}
+        >
+          <List.Item.Meta
+            avatar={ProjectItemAvatar}
+            title={ProjectTitle}
+            description={ProjectDescription}
+          />
+        </List.Item>
     </Fragment>
   );
 }
