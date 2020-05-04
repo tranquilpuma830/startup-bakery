@@ -11,7 +11,7 @@ export default function Page(props) {
     <div>
       <Layout>
         <Navbar />
-        <Content className="bg-white">{props.children}</Content>
+        <Content>{props.children}</Content>
         <Footer />
       </Layout>
     </div>

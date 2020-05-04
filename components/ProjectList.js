@@ -14,18 +14,18 @@ function LoadMoreSection() {
         lineHeight: "32px",
       }}
     >
-      <Button>loading more</Button>
+      <button className="btn btn-outline-primary btn-round">loading more</button>
     </div>
   );
 }
 
-function ProjectList({ projects, count }) {
+function ProjectList({ projects }) {
   return (
     <List
       loadMore={<LoadMoreSection />}
       itemLayout="horizontal"
       dataSource={projects}
-      renderItem={(item) => <ProjectListItem key={item.id} {...item} />}
+      renderItem={(item) => <ProjectListItem {...item} />}
     />
   );
 }

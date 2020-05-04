@@ -1,25 +1,32 @@
-const projectLogosPath = '/projectLogos/';
+const projectLogosPath = '/project-logos/';
 
 export const IDEAS_MOCK = [
   {
     id: 1,
-    projectName: 'StartupBakery',
-    logoUrl: 'https://www.logomyway.com/marketPlace/Rudzy_15340/Abstract_Bird_copy.jpg',
-    description: 'Et omnia in potestate nostra esse natura liber, libera, libere valeant; sed illis non est in nostra potestate sunt infirmi, servilis, licet, lex pertinet.',
-    approval: 43,
+    projectName: 'Work Balance',
+    logoUrl: projectLogosPath + 'work-balance.png',
+    description: 'Уникальная платформа по анализу открытых данных для отображения вакансий по регионам. Сервис позволяет найти работу в другом регионе еще до переезда. ',
+    approval: 202,
   },
   {
     id: 2,
-    projectName: 'SAFYI REAL ESTATE',
-    logoUrl: 'https://cdn.shopify.com/shopifycloud/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png',
-    description: 'Et omnia in potestate nostra esse natura liber, libera, libere valeant; sed illis non est in nostra potestate sunt infirmi, servilis, licet, lex pertinet.',
-    approval: 12,
+    projectName: 'CyberLexa',
+    logoUrl: projectLogosPath + 'cyperlexa.png',
+    description: 'Дружелюбный серсис по обучению кибербезопасности. Практические курсы, которые охватывают все сферы информационной безопасности.',
+    approval: 993,
   },
   {
     id: 3,
-    projectName: 'Gamenub',
-    logoUrl: 'https://cdn.shopify.com/shopifycloud/hatchful-web/assets/67cbe9b74baf7f893488c5fc426d31eb.png',
-    description: 'Et omnia in potestate nostra esse natura liber, libera, libere valeant; sed illis non est in nostra potestate sunt infirmi, servilis, licet, lex pertinet.',
-    approval: 5,
+    projectName: 'SaveNow',
+    logoUrl: projectLogosPath + 'save-now.png',
+    description: 'Сервис для прямой доставки товаров без посредников. Возможность найма исполнителя для доставки товара за плату.',
+    approval: 47,
+  },
+  {
+    id: 4,
+    projectName: 'Startup Bakery',
+    logoUrl: projectLogosPath + 'startup-bakery.svg',
+    description: 'Уникальная площадка, где каждый может разместить свою проектную идею и довести ее результата. Здесь каждый сможет “выпечь” свой стартап-проект.',
+    approval: 153,
   },
 ];

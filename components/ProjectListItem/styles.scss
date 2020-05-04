@@ -1,0 +1,31 @@
+@import "../../styles/core/variables";
+
+.project-list-item {
+  border-radius: 15px;
+  max-width: 600px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(69, 90, 100, 0.25);
+    .project-list-item__image {
+      box-shadow: none;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    width: 156px;
+    height: 156px;
+    border-radius: 38px;
+    box-shadow: 10px 10px 20px rgba(69, 90, 100, 0.25);
+    background-color: white;
+    img {
+      width: 100%;
+
+    }
+  }
+}
