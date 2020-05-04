@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "build": "next build",
-    "start": "next dev --port=$PORT"
+    "build": "echo Build success",
+    "start": "node server"
   },
   "dependencies": {
     "@ant-design/icons": "^4.1.0",

@@ -3,26 +3,5 @@
   "watch": ["server", "static"],
   "ignore": ["node_modules", ".next"],
   "exec": "node server",
-  "ext": "js",
-  "env": {
-    "PORT": 3000,
-    "ENV": "dev",
-    "FB_API_KEY": "AIzaSyDMA4Bjez-jk5AzXms5PhBSHsowsgbQR0g",
-    "FB_AUTH_DOMAIN": "startupbakery-aceec.firebaseapp.com",
-    "FB_DATABASE_URL": "https://startupbakery-aceec.firebaseio.com",
-    "FB_PROJECT_ID": "startupbakery-aceec",
-    "FB_STORAGE_BUCKET": "startupbakery-aceec.appspot.com",
-    "FB_MESSAGING_SENDER_ID": "17661808067",
-    "FB_APP_ID": "1:17661808067:web:df79ad2b2db175550a4176",
-    "FB_ADMIN_TYPE": "service_account",
-    "FB_ADMIN_PROJECT_ID": "startupbakery-aceec",
-    "FB_ADMIN_PRIVATE_KEY_ID": "d027f24c4843244f01750de82231eadb0c9d037d",
-    "FB_ADMIN_PRIVATE_KEY": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6HXujM9uGVQZu\nY5Co0CYfkVqx4kqlbfKhT1qIjdR7YihRcKCcLJn1qwIUp6la/LFuw4GZ84UozSgd\nRBbZpkYtK5qlUmGOSkJsXSzjVEI5Pd5feFhir3kylDErzH8qrCbOVVsiYlITyulB\n09UZJmLjubUOTc1LKlMmZ5shNHLZ6Bn5U0YKfc9N/L6N4CDeQkdVauIPdkPEhQ3h\nXOyBFsm/vC5uM2V666IavwQ+ui30SOsRmd9t0eOAwegMY5iAi14S9LqAfBdvZzrk\n09LqkOvRNsWZmpYacE6Z4NyDjO+zzrKyVxZtvp9BKroeo27IXHEnZIU3iWRIlsWo\nDqrtw501AgMBAAECggEAAj8qxK0MPG2O1hE2iBjF+QtJA1nTIyoCxZILncqxuVD7\n4eqaGcCLfEGvLpiM80fJ8yeB8aqU3ZaUCL4CogGymhPk0+DJqjOfZFqZZd+/K+mh\nPPK0ntf1vqSECNgSlrojMf1dGNSdUoolMWtkYjkXKDiDJPppKcjhRGOrf2XFCpHc\n+/gAEmgoGpuPCSAkgYD3skVgRk8BekU7pi4Vt4VgaKPnodF3ZSj4ZtROvvCy+ibC\nLb3rp9uMk0iC+4Bun9egKv+Ds0vypZ/+yh518xwXXvrx2w74jRcX/yaXGKHcvxbE\nfZ2HrC9alaOINp2q4UrJPtxXQD1N08Bne6I8bJdZwQKBgQDtq9y4HukU0Ws4aN0s\naOr9jLC/PMQUMvcmH6sq/A4AmYqPZAHtcj9m+Cu8o1qaSvAjU+b8ndl+PUTmxaAF\nKuz2N/aocI/Yyn7NPO1dHgIIaoSDFdLMZxWIsaWH3gajs5y0JwwVIaMnvCB4QPcj\nAc9Z6kFmR8yBNNkt+/cGrl7b9QKBgQDId8rVbdQlhagtPwSo4zRwSzQLygOmxE3p\nPamzJp2r1/bNrSX+YCXDgf71d4nc75m+yz2nZOFMKNiCGvZ3Vj/u7RHwV3NfpFP3\nH8EIOncDq9cWdVcU/nWFa2YkJqFOdaZw5xX5ac2n5bAbeU4J4B/3sNqJxczh9X3u\n5aKE9wA0QQKBgCsiQ76OrZJ/p0vnjCxhJjS58eHjL1rTHROoL7JvaEMnmoQHjGoB\nkAwqAhYMN4dFDmv68DLsmupUSErxlucZMURGR9euBg08QuMQqat6pLfOTRpVPZqn\nIrtaMkaEPwQ6trfjVkgHgMrXU7U/ZRrPW0hgQVpEsZLJepjj36Mwxjp5AoGAHqP4\ns7CKyYVpVCkarDm2DSfhd5/T+QxuICVVp9VSKi7jQUKi2QOXIg/fiWNRBhz1Me1c\nqhZIPVzM4u3+F/Vt5jYEFOk48DhswQvwdDKDeGMuh/c9bS8LhW4J+aKR6y0eWIlp\nmWqrjWsVBM4AuI+yMyir7nz2ON9N9VLSCWK7fEECgYEA5TR0yXjd3eWVhBWHnFuh\n0G+eaGzTow+jCTUFieDWwo+BMkwNx+EniIQLFaT4SykqtAHBn31eWligYnQbPHkw\n3MeewX0P7PM5aK+AF9YVtQiwsBbUsvmVh11oPAiamMAZ14jbQaNUehq4MUUzD6nr\nf/69GcZRez9DmzPylEdHCqU=\n-----END PRIVATE KEY-----\n",
-    "FB_ADMIN_CLIENT_EMAIL": "firebase-adminsdk-9tx0f@startupbakery-aceec.iam.gserviceaccount.com",
-    "FB_ADMIN_CLIENT_ID": "106591029968489500526",
-    "FB_ADMIN_AUTH_URI": "https://accounts.google.com/o/oauth2/auth",
-    "FB_ADMIN_TOKEN_URI": "https://oauth2.googleapis.com/token",
-    "FB_ADMIN_AUTH_PROVIDER_X509_CERT_URL": "https://www.googleapis.com/oauth2/v1/certs",
-    "FB_ADMIN_CLIENT_X509_CERT_URL": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-9tx0f%40startupbakery-aceec.iam.gserviceaccount.com"
-  }
+  "ext": "js"
 }
