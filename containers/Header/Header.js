@@ -1,13 +1,13 @@
-import React from "react";
-import "./Header.scss";
-import Link from "next/link";
+import React from 'react';
+import './Header.scss';
+import Link from 'next/link';
 
-const Header = () => {
+const Header = ({ forLanding }) => {
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className={`navbar ${forLanding ? 'navbar-expand-sm' : 'navbar-expand-md'}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img width="100px" src="/icons/logo.svg" />
+          <img src="/logo.svg" className="mr-3" style={{ width: '20vw' }} />
         </a>
         <button
           className="navbar-toggler btn"
@@ -25,7 +25,7 @@ const Header = () => {
             <li className="nav-item active">
               <Link href="/ideas">
                 <a className="nav-link">
-                  <img width="20px" src="/icons/menu.svg" /> Меню{" "}
+                  <img width="20px" src="/icons/menu.svg" className="mr-2" /> Меню{' '}
                   <span className="sr-only">(current)</span>
                 </a>
               </Link>
@@ -33,14 +33,14 @@ const Header = () => {
             <li className="nav-item">
               <Link href="/#">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/bakery.svg" /> Пекарня
+                  <img width="20px" src="/icons/bakery.svg" className="mr-2" /> Пекарня
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/ideas">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/degustation.svg" />
+                  <img width="20px" src="/icons/degustation.svg" className="mr-2" />
                   Дегустация
                 </a>
               </Link>
@@ -48,36 +48,39 @@ const Header = () => {
             <li className="nav-item">
               <Link href="/auction">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/bets.svg" /> Аукцион
+                  <img width="20px" src="/icons/bets.svg" className="mr-2" /> Аукцион
                 </a>
               </Link>
             </li>
           </ul>
-          <span className="navbar-text">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Профиль
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
-                Action
+          {!forLanding && (
+            <span className="navbar-text">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img width="25px" src="/icons/profile.svg" className="mr-2" />
+                Профиль
               </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </span>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a className="dropdown-item" href="#">
+                  Action
+                </a>
+                <a className="dropdown-item" href="#">
+                  Another action
+                </a>
+                <div className="dropdown-divider"></div>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </div>
+            </span>
+          )}
         </div>
       </div>
     </nav>

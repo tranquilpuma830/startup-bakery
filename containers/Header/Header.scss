@@ -1,3 +1,5 @@
+@import 'styles/core/variables';
+
 .navbar {
   background-color: white;
   box-shadow: 2px 13px 12px -16px rgba(0, 0, 0, 0.75);
@@ -5,14 +7,13 @@
 }
 
 .navbar-brand {
-  color: #FDB15D;
+  color: $primary-lightest !important;
   font-weight: bold;
 }
 
 .nav-link {
   color: #6b6b6b;
   font-weight: bold;
-  text-transform: uppercase;
 
   img {
     margin: 3px;
@@ -21,5 +22,11 @@
 
 .navbar-brand:hover,
 .nav-link:hover {
-  color: #FDB15D;
+  color: $primary-light;
+}
+
+@media (max-width: 991.98px) {
+  .nav-link {
+    font-size: 12px !important;
+  }
 }
