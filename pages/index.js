@@ -17,7 +17,7 @@ const tailLayout = {
 export default function Home() {
   return (
     <Layout className='cover-container d-flex h-100 mx-auto flex-column bg-white-filled'>
-      <Header />
+      <Header forLanding />
       <Content className='d-flex px-4 align-items-center'>
         <div className='my-auto w-50 px-2'>
           <Title className=''>Lorem ipsum</Title>
