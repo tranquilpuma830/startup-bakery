@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
 
 @import 'core/variables';
 @import '~bootstrap/scss/bootstrap';
@@ -9,8 +10,13 @@
   min-height: 100% !important;
 }
 
+
+body {
+  font-family: Montserrat;
+}
 .no-shadow {
   box-shadow: none !important;
+
 }
 
 .border-thick {
@@ -30,6 +36,7 @@
   background-color: $primary-light !important;
 }
 
+.bg,
 .bg-filled,
 .bg-white-filled,
 .bg-half-filled,
@@ -37,6 +44,9 @@
 .bg-guy {
   background: no-repeat !important;
   background-size: cover !important;
+}
+.bg {
+  background-image: url('/backgrounds/background.svg') !important;
 }
 
 .bg-filled {
@@ -72,8 +82,7 @@
   margin: 10% auto;
   border-radius: 5px;
   background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9,
-    -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 
   .form__block {
     margin: 100px 50px 80px 50px;
@@ -97,8 +106,8 @@
 
 .login__data {
   border-radius: 50px;
-  border: 1px solid #FDB15D;
-  background-color: #FAFADC;
+  border: 1px solid #fdb15d;
+  background-color: #fafadc;
 }
 
 .ant-btn-primary {
@@ -106,7 +115,8 @@
   background-color: $primary !important;
 }
 
-.ant-btn:hover, .ant-btn:focus {
+.ant-btn:hover,
+.ant-btn:focus {
   color: rgb(235, 142, 70) !important;
   background-color: rgb(255, 255, 255) !important;
   border-color: rgb(235, 142, 70) !important;
@@ -119,6 +129,37 @@ a.btn-primary {
   color: white !important;
 }
 
-.btn-outline-primary:hover { 
+.btn-outline-primary:hover {
   color: white !important;
+}
+
+.btn-gradient {
+  background: linear-gradient(270deg, $primary 0%, $primary-light 100%);
+  border: none !important;
+  border-radius: 23.5px;
+}
+
+.card-empty {
+  background: #ffffff;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+.lead-land-text {
+  font-size: 18px !important;
+}
+
+.lead-land-title {
+  font-size: 48px !important;
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .lead-land-text, .btn-gradient {
+    font-size: 14px !important;
+  }
+
+  .lead-land-title {
+    font-size: 28px !important;
+  }
 }

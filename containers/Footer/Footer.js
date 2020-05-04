@@ -3,7 +3,7 @@ import "./Footer.scss";
 const Footer = () => {
   let [lng, setLng] = useState(false);
   return (
-    <footer className="footer">
+    <footer className="footer bg-half">
       <div className="container">
         <div className="footer__content">
           <h4 className="title m-bold">Помощь пользователю</h4>
