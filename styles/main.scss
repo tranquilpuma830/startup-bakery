@@ -27,6 +27,7 @@
 }
 
 .bg-filled,
+.bg-white-filled,
 .bg-half-filled,
 .bg-half,
 .bg-guy {
@@ -36,6 +37,10 @@
 
 .bg-filled {
   background-image: url('/backgrounds/background-filled.svg') !important;
+}
+
+.bg-white-filled {
+  background-image: url('/backgrounds/background-white.svg') !important;
 }
 
 .bg-half-filled {
@@ -105,4 +110,11 @@
 
 a {
   color: $primary !important;
+}
+a.btn-primary {
+  color: white !important;
+}
+
+.btn-outline-primary:hover { 
+  color: white !important;
 }

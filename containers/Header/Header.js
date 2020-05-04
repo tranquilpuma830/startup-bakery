@@ -10,7 +10,7 @@ const Header = () => {
           <img width="100px" src="/icons/logo.svg" />
         </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler btn"
           type="button"
           data-toggle="collapse"
           data-target="#navbarText"
