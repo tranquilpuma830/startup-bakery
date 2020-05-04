@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Head from "next/head";
+import Header from "../containers/Header/Header";
+import "../styles/main.scss";
 import { Input, Typography, Layout, Form } from "antd";
 
 const { Content } = Layout;
@@ -16,69 +17,26 @@ const tailLayout = {
 
 export default function Home() {
   return (
-    <Layout className="cover-container d-flex h-100 mx-auto flex-column bg-white bg-half-filled">
-      <Head>
-        <title>Startup | Bakery</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <header className="masthead mb-auto">
-        <div className="inner  p-3">
-          <nav className="d-flex nav nav-masthead justify-content-between align-items-center font-weight-bold">
-            <div className="container-fluid">
-              <a className="navbar-brand" href="#">
-                <img width="100px" src="/icons/logo.svg" />
-              </a>
-              <div className="d-flex w-auto float-right text-secondary">
-                <a className="text-secondary nav-link" href="#">
-                  Курсы
-                </a>
-                <a className="text-secondary nav-link" href="#">
-                  Команды
-                </a>
-                <a className="text-secondary nav-link" href="#">
-                  Новости
-                </a>
-                <a className="text-secondary nav-link" href="#">
-                  Вакансии
-                </a>
-              </div>
-            </div>
-          </nav>
+    <Layout className="cover-container d-flex h-100 mx-auto flex-column bg-white-filled">
+      <Header />
+      <Content className="container-fluid d-flex px-5 align-items-center">
+        <div className="my-auto w-50 px-5 index__content">
+          <Title className="font-weight-bold">Испеки свой проект</Title>
+
+          <Text>
+            <b>Startup Bakery</b> - уникальная площадка, где каждый может
+            разместить свою проектную идею и довести ее результата.
+            Присоединяйся к Startup Bakery, и с нашей помощью ты сможешь
+            “выпечь” свой стартап, пройдя самые трудные этапы, на которых чаще
+            всего перегорают проекты.
+          </Text>
+          <Link href="/login">
+            <a className="index__btn btn btn-primary mt-4 d-block">
+              Попробовать бесплатно
+            </a>
+          </Link>
         </div>
-      </header>
-      <Content className="d-flex p-4 ml-2 align-items-center bg-guy">
-        <div className="my-auto h-100">
-          <Form
-            {...layout}
-            name="basic"
-            initialValues={{ remember: true }}
-            className="my-auto"
-          >
-            <Title>Войти</Title>
-
-            <Form.Item
-              name="username"
-              rules={[{ required: true, message: "Пожалуйста, введите email" }]}
-            >
-              <Input placeholder="Email" />
-            </Form.Item>
-
-            <Form.Item
-              name="password"
-              rules={[
-                { required: true, message: "Пожалуйста, введите пароль" },
-              ]}
-            >
-              <Input.Password placeholder="Пароль" />
-            </Form.Item>
-
-            <Form.Item>
-              <Link href="ideas">
-                <a className="btn btn-outline-primary">Дальше</a>
-              </Link>
-            </Form.Item>
-          </Form>
-        </div>
+        <div className="my-auto w-50 bg-guy" style={{ height: "90vh" }} />
       </Content>
     </Layout>
   );

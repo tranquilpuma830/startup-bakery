@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
+
 import Footer from "../containers/Footer/Footer";
 import Navbar from "./Header/Header";
 

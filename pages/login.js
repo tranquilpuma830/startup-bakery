@@ -2,6 +2,7 @@ import React from "react";
 import Page from "../containers/Page";
 import "../styles/main.scss";
 import { Layout } from "antd";
+import Link from "next/link";
 
 const Login = () => {
   return (
@@ -30,12 +31,9 @@ const Login = () => {
                     placeholder="password"
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary mb-3 float-right"
-                >
-                  Войти
-                </button>
+                <Link href="/ideas">
+                  <a className="btn btn-primary mb-3 float-right">Войти</a>
+                </Link>
               </form>
             </div>
           </div>

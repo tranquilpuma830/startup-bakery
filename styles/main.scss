@@ -6,7 +6,7 @@
 
 // To make full-height page
 #__next {
-  height: 100% !important;
+  min-height: 100% !important;
 }
 
 .border-thick {
@@ -27,6 +27,7 @@
 }
 
 .bg-filled,
+.bg-white-filled,
 .bg-half-filled,
 .bg-half,
 .bg-guy {
@@ -36,6 +37,10 @@
 
 .bg-filled {
   background-image: url('/backgrounds/background-filled.svg') !important;
+}
+
+.bg-white-filled {
+  background-image: url('/backgrounds/background-white.svg') !important;
 }
 
 .bg-half-filled {
@@ -74,16 +79,16 @@
     font-weight: 500;
   }
 
-  button {
+  a {
     margin-top: 30px;
     width: 150px;
   }
 }
 
 .login__img {
-  // Тет будет инфографика картинка но пока ее нет
   background-image: url('/backgrounds/background.png');
-  background-size: cover;
+  background-size: 100% 100%;
+
 }
 
 .login__data {
@@ -92,6 +97,42 @@
   background-color: #FAFADC;
 }
 
+.ant-btn-primary {
+  border-color: $primary !important;
+  background-color: $primary !important;
+}
+
+.ant-btn:hover,
+.ant-btn:focus {
+  color: rgb(235, 142, 70) !important;
+  background-color: rgb(255, 255, 255) !important;
+  border-color: rgb(235, 142, 70) !important;
+}
+
+a {
+  color: $primary !important;
+}
+
+a.btn-primary {
+  color: white !important;
+}
+
+.btn-outline-primary:hover {
+  color: white !important;
+}
+
 .project {
   padding: 5% 0%;
+}
+
+.index__btn {
+  background: linear-gradient(270deg, #DE6A1E 0%, #FDB15D 100%);
+  border-radius: 23.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 140%;
+  padding: 10px 0px;
+  width: 250px;
+  border-color: white;
 }

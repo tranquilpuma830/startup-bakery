@@ -3,8 +3,8 @@ import { Button, List } from "antd";
 
 import ProjectListItem from "./ProjectListItem";
 
-function ProjectList({ projects, count }) {
-  const loadMore = (
+function LoadMoreSection() {
+  return (
     <div
       style={{
         textAlign: "center",
@@ -16,12 +16,15 @@ function ProjectList({ projects, count }) {
       <Button>loading more</Button>
     </div>
   );
+}
 
+function ProjectList({ projects, count }) {
   return (
-    <List loadMore={loadMore}
-          itemLayout="horizontal"
-          dataSource={projects}
-          renderItem={item => <ProjectListItem {...item}/>}
+    <List
+      loadMore={<LoadMoreSection />}
+      itemLayout="horizontal"
+      dataSource={projects}
+      renderItem={(item) => <ProjectListItem {...item} />}
     />
   );
 }

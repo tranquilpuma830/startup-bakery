@@ -10,7 +10,7 @@ const Header = () => {
           <img width="100px" src="/icons/logo.svg" />
         </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler btn"
           type="button"
           data-toggle="collapse"
           data-target="#navbarText"
@@ -55,7 +55,7 @@ const Header = () => {
           </ul>
           <span className="navbar-text">
             <a
-              class="nav-link dropdown-toggle"
+              className="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdown"
               role="button"
@@ -65,15 +65,15 @@ const Header = () => {
             >
               Профиль
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a className="dropdown-item" href="#">
                 Action
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Another action
               </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">
+              <div className="dropdown-divider"></div>
+              <a className="dropdown-item" href="#">
                 Something else here
               </a>
             </div>
