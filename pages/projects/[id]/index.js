@@ -6,7 +6,7 @@ import Page from "../../../containers/Page";
 import { PROJECT_DATA } from "../../../constants/projects";
 import "./styles.scss";
 const projectLogosPath = "/project-logos/";
-
+const { Content } = Layout;
 const Project = () => {
   const [defaultTab, setDefaultTab] = useState("1");
 
@@ -20,7 +20,7 @@ const Project = () => {
         </>
       );
     }
-    if (node.type === 'title') {
+    if (node.type === "title") {
       return (
         <div className="m-3">
           <Typography.Title level={3}>{node.content}</Typography.Title>
@@ -53,90 +53,95 @@ const Project = () => {
   ));
 
   return (
-    <Page className="bg-white">
-      <div className="container project">
-        <div
-          className="text-center p-5"
-          style={{
-            boxShadow: "0px 0px 10px 5px #e3e3e3",
-            borderRadius: "10px",
-          }}
-        >
-          <Layout.Content>
-            <div className="d-flex align-items-center">
-              <div className="flex-1">
-                <img src={`${projectLogosPath}startup-bakery.svg`} className="w-50" />
+    <Page>
+      <Content className="fr">
+        <div className="container project">
+          <div
+            className="text-center p-5 bg-white"
+            style={{
+              boxShadow: "0px 10px 20px -5px rgba(0, 0, 0, 0.75)",
+              borderRadius: "10px",
+            }}
+          >
+            <Layout.Content>
+              <div className="d-flex align-items-center ">
+                <div className="flex-1">
+                  <img
+                    src={`${projectLogosPath}startup-bakery.svg`}
+                    className="w-50"
+                  />
+                </div>
+                <div className="flex-1 text-left">
+                  <Typography.Title className="mt-5">
+                    {PROJECT_DATA.title}
+                  </Typography.Title>
+                  <Typography.Text>{PROJECT_DATA.subtitle}</Typography.Text>
+                </div>
               </div>
-              <div className="flex-1 text-left">
-                <Typography.Title className="mt-5">
-                  {PROJECT_DATA.title}
-                </Typography.Title>
-                <Typography.Text>{PROJECT_DATA.subtitle}</Typography.Text>
+
+              <div className="m-5">
+                <div>
+                  <img
+                    className="w-auto"
+                    style={{
+                      height: "400px",
+                    }}
+                    src={PROJECT_DATA.cover_img}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="m-5">
-              <div>
-                <img
-                  className="w-auto"
-                  style={{
-                    height: "400px",
-                  }}
-                  src={PROJECT_DATA.cover_img}
-                />
-              </div>
-            </div>
+              <Tabs
+                defaultActiveKey={defaultTab}
+                activeKey={defaultTab}
+                onChange={setDefaultTab}
+              >
+                <Tabs.TabPane tab="Обзор" key="1">
+                  <div className="w-50 m-auto text-left">
+                    <Typography.Text>{projectOverview}</Typography.Text>
+                    <div>
+                      <Divider
+                        style={{
+                          backgroundColor: "#aeaeae",
+                        }}
+                      />
+                      <Typography.Title level={3}>
+                        Questions about the project?
+                        <br />
+                        <Button type="link" onClick={() => setDefaultTab("3")}>
+                          Check the FAQ section
+                        </Button>
+                      </Typography.Title>
 
-            <Tabs
-              defaultActiveKey={defaultTab}
-              activeKey={defaultTab}
-              onChange={setDefaultTab}
-            >
-              <Tabs.TabPane tab="Обзор" key="1">
-                <div className="w-50 m-auto text-left">
-                  <Typography.Text>{projectOverview}</Typography.Text>
-                  <div>
-                    <Divider
-                      style={{
-                        backgroundColor: "#aeaeae",
-                      }}
-                    />
-                    <Typography.Title level={3}>
-                      Questions about the project?
-                      <br />
-                      <Button type="link" onClick={() => setDefaultTab("3")}>
-                        Check the FAQ section
-                      </Button>
-                    </Typography.Title>
-
-                    <Divider
-                      style={{
-                        backgroundColor: "#aeaeae",
-                      }}
-                    />
+                      <Divider
+                        style={{
+                          backgroundColor: "#aeaeae",
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              </Tabs.TabPane>
-              <Tabs.TabPane tab="Команда" key="2">
-                <Typography.Title level={3}>Команда</Typography.Title>
-                <div>{comments}</div>
-              </Tabs.TabPane>
-              <Tabs.TabPane tab="Задачи" key="3">
-                <Typography.Title level={3}>Задачи</Typography.Title>
-                <div className="m-auto w-50 text-left">
-                  <Collapse defaultActiveKey={[]} expandIconPosition="right">
-                    {PROJECT_DATA.FAQ.map((item, i) => (
-                      <Collapse.Panel key={i} header={item.header}>
-                        {item.content}
-                      </Collapse.Panel>
-                    ))}
-                  </Collapse>
-                </div>
-              </Tabs.TabPane>
-            </Tabs>
-          </Layout.Content>
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Команда" key="2">
+                  <Typography.Title level={3}>Команда</Typography.Title>
+                  <div>{comments}</div>
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Задачи" key="3">
+                  <Typography.Title level={3}>Задачи</Typography.Title>
+                  <div className="m-auto w-50 text-left">
+                    <Collapse defaultActiveKey={[]} expandIconPosition="right">
+                      {PROJECT_DATA.FAQ.map((item, i) => (
+                        <Collapse.Panel key={i} header={item.header}>
+                          {item.content}
+                        </Collapse.Panel>
+                      ))}
+                    </Collapse>
+                  </div>
+                </Tabs.TabPane>
+              </Tabs>
+            </Layout.Content>
+          </div>
         </div>
-      </div>
+      </Content>
     </Page>
   );
 };

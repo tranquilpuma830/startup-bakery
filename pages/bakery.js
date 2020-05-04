@@ -78,7 +78,7 @@ export default function Bakery() {
                       </div>
                     </div>
                     <Text className="d-block" strong>
-                      Teams
+                      Team
                     </Text>
                     <div className="d-flex mt-1">
                       {item.team.map((user) => (
