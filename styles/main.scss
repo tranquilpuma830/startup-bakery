@@ -73,6 +73,12 @@ body {
   background-position: right !important;
 }
 
+.bg-two-guys {
+  background-image: url('/backgrounds/two_guys.svg'), url('/backgrounds/background.svg');
+  background-size: 100% 100%, cover;
+  border-radius: 20px 0px 0px 20px;
+}
+
 .shape-background {
   background: no-repeat;
   background-size: 100%;
@@ -266,6 +272,10 @@ a.btn-primary {
   border-radius: 15px;
 }
 
+.shadow {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.15);
+}
+
 .lead-land-text {
   font-size: 18px !important;
 }
@@ -286,7 +296,7 @@ a.btn-primary {
   height: 42px;
   background-color: #fcfcfc;
   border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   cursor: hand;
   align-self: center;
@@ -301,7 +311,7 @@ a.btn-primary {
   width: 40px;
   height: 40px;
   border-radius: 2px;
-  user-select: none
+  user-select: none;
 }
 .google-btn .google-icon-svg {
   position: absolute;
@@ -309,26 +319,26 @@ a.btn-primary {
   margin-left: 11px;
   width: 18px;
   height: 18px;
-  user-select: none
+  user-select: none;
 }
 .google-btn .btn-text {
   float: right;
   margin: 11px 14px 40px 40px;
   color: #757575;
   font-size: 14px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   font-family: Roboto;
-  user-select: none
+  user-select: none;
 }
 .google-btn:hover {
-  box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
-  user-select: none
+  box-shadow: 0 3px 8px rgba(117, 117, 117, 0.5);
+  user-select: none;
 }
 .google-btn:active {
   box-shadow: 0 1px 1px #757575;
-  background: #F8F8F8;
+  background: #f8f8f8;
   color: #fff;
-  user-select: none
+  user-select: none;
 }
 
 .normal-btn {
@@ -340,35 +350,36 @@ a.btn-primary {
   height: 42px;
   background-color: #fcfcfc;
   border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   cursor: hand;
-  align-self: center;-webkit-touch-callout: none;
+  align-self: center;
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: all 400ms ease 0s
+  transition: all 400ms ease 0s;
 }
 .normal-btn .btn-text {
   float: left;
   margin: 11px 14px 11px 14px;
   color: #757575;
   font-size: 14px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   font-family: Roboto;
-  user-select: none
+  user-select: none;
 }
 .normal-btn:hover {
-  box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
-  user-select: none
+  box-shadow: 0 3px 8px rgba(117, 117, 117, 0.5);
+  user-select: none;
 }
 .normal-btn:active {
   box-shadow: 0 1px 1px #757575;
-  background: #F8F8F8;
+  background: #f8f8f8;
   color: #fff;
-  user-select: none
+  user-select: none;
 }
 
 // Medium devices (tablets, less than 992px)
