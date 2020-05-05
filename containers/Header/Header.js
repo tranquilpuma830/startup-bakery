@@ -16,7 +16,47 @@ const menu = (
       </Link>
     </Menu.Item>
     <Menu.Item>
-      <a href="/api/auth/logout" className="text-danger" rel="noopener noreferrer">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.alipay.com/"
+      >
+        Курсы
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
+        Статьи
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
+        Сообщество
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
+        Вакансии
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a
+        href="/api/auth/logout"
+        className="text-danger"
+        rel="noopener noreferrer"
+      >
         Выйти
       </a>
     </Menu.Item>
@@ -34,7 +74,11 @@ const Header = ({ forLanding }) => {
     >
       <div className="container-fluid">
         <Link href="/">
-          <img src="/logo.svg" className="mr-3 c-pointer" style={{ width: "20vw" }} />
+          <img
+            src="/logo.svg"
+            className="mr-3 c-pointer"
+            style={{ width: "20vw" }}
+          />
         </Link>
         <button
           className="navbar-toggler btn"
@@ -52,7 +96,7 @@ const Header = ({ forLanding }) => {
             <li className="nav-item active">
               <Link href="/ideas">
                 <a className="nav-link">
-                  <img width="20px" src="/icons/menu.svg" className="mr-2" />{" "}
+                  <img width="20px" src="/icons/menu.svg" className="mr-2" />
                   Меню <span className="sr-only">(current)</span>
                 </a>
               </Link>
@@ -60,14 +104,14 @@ const Header = ({ forLanding }) => {
             <li className="nav-item">
               <Link href="/bakery">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/bakery.svg" className="mr-2" />{" "}
+                  <img width="20px" src="/icons/bakery.svg" className="mr-2" />
                   Пекарня
                 </a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/ideas">
-                <a className="nav-link" href="#">
+              <Link href="/degustation">
+                <a className="nav-link" href="">
                   <img
                     width="20px"
                     src="/icons/degustation.svg"
@@ -80,7 +124,7 @@ const Header = ({ forLanding }) => {
             <li className="nav-item">
               <Link href="/auction">
                 <a className="nav-link" href="#">
-                  <img width="20px" src="/icons/bets.svg" className="mr-2" />{" "}
+                  <img width="20px" src="/icons/bets.svg" className="mr-2" />
                   Аукцион
                 </a>
               </Link>
