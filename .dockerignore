@@ -1,0 +1,9 @@
+node_modules
+e2e
+reports
+.next
+out
+dist
+tools
+.idea
+.git

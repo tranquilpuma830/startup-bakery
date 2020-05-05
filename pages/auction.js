@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useUser } from "../containers/UserContext";
 import {
   Descriptions,
   Avatar,
@@ -18,13 +19,13 @@ const { Countdown } = Statistic;
 const TIMER_DEADLINE = Date.now() + 1000 * 60 * 60 * 2;
 
 const sortByAmount = (toSort) =>
-  toSort.sort((a, b) => (a.amount < b.amount ? 1 : -1));
+  toSort.sort ? toSort.sort((a, b) => (a.amount < b.amount ? 1 : -1)) : toSort;
 
 const InvestorsList = ({ players, isLoading }) => {
   return (
     <List
       itemLayout="horizontal"
-      dataSource={isLoading ? [] : players}
+      dataSource={isLoading ? [] : sortByAmount(players)}
       renderItem={(item, idx) => (
         <List.Item key={idx}>
           {isLoading ? (
@@ -37,7 +38,7 @@ const InvestorsList = ({ players, isLoading }) => {
             <List.Item.Meta
               avatar={<Avatar src={item.avatar} />}
               title={item.title}
-              description={item.amount + "$"}
+              description={"$" + item.amount}
             />
           )}
         </List.Item>
@@ -50,24 +51,50 @@ const Auction = () => {
   const [topPlayer, setTopPlayer] = useState();
   const [players, setPlayers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const user = useUser();
 
-  let player = players.find((p) => p.title === "Владимир Лунёв");
+  let player = !user
+    ? null
+    : {
+        title: user.name,
+        avatar: user.picture,
+        email: user.email,
+        amount: 0,
+        rating: "",
+        role: "",
+      };
+
+  function regUser(user) {
+    if (players.length > 0) {
+      return firebase.database().ref(`/users/${players.length}`).set(user);
+    }
+    return null;
+  }
 
   useEffect(() => {
     setTimeout(() => {
       firebase
         .database()
         .ref("/users")
+        .orderByChild("amount")
         .once("value")
         .then((snapshot) => {
-          setPlayers(sortByAmount(snapshot.val()));
+          const playersNew = snapshot.val().reverse();
+          setPlayers(playersNew);
           setIsLoading(false);
         });
     }, 10);
   }, []);
 
   useEffect(() => {
-    setTopPlayer(players[0]);
+    setTopPlayer(sortByAmount(players)[0]);
+    const autheduser = players.find((p) => p.email === player.email);
+    if (user && !autheduser) {
+      regUser(player);
+    } else {
+      console.log("settingUser", autheduser);
+      player = autheduser;
+    }
   }, [players]);
 
   const onRaiseBet = () => {
@@ -76,7 +103,7 @@ const Auction = () => {
     const newPlayers = [...players];
     setPlayers(sortByAmount(newPlayers));
   };
-  //<Skeleton active />
+
   return (
     <Page>
       <Layout className="bg-white">
@@ -165,15 +192,17 @@ const Auction = () => {
                     <h5>{topPlayer.title}</h5>
                     <p>{topPlayer.role}</p>
                     <div className="bets__max">
-                      <b> Сумма инвестиций: </b> {topPlayer.amount}$
+                      <b> Сумма инвестиций: </b> ${topPlayer.amount}
                     </div>
                   </div>
-                  <a
-                    onClick={onRaiseBet}
-                    className="btn btn-primary btn-gradient w-auto mb-4 px-lg-3 px-auto"
-                  >
-                    Поднять ставку
-                  </a>
+                  {player && (
+                    <a
+                      onClick={onRaiseBet}
+                      className="btn btn-primary btn-gradient w-auto mb-4 px-lg-3 px-auto"
+                    >
+                      Поднять ставку
+                    </a>
+                  )}
                 </>
               ) : (
                 <>
