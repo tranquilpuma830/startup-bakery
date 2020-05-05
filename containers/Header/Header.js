@@ -11,30 +11,13 @@ const { Text } = Typography;
 const menu = (
   <Menu>
     <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://www.alipay.com/"
-      >
-        1st menu item
-      </a>
+      <Link href="/projects/add" rel="noopener noreferrer">
+        Добавить проект
+      </Link>
     </Menu.Item>
     <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://www.taobao.com/"
-      >
-        2nd menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a
-        href="/api/auth/logout"
-        className="text-danger"
-        rel="noopener noreferrer"
-      >
-        Logout
+      <a href="/api/auth/logout" className="text-danger" rel="noopener noreferrer">
+        Выйти
       </a>
     </Menu.Item>
   </Menu>
@@ -112,12 +95,12 @@ const Header = ({ forLanding }) => {
                     onClick={(e) => e.preventDefault()}
                   >
                     <Avatar src={user.picture}>{user.name[0]}</Avatar>
-                    <Text className="ml-1">{user.email}</Text>
+                    <Text className="ml-1">{user.name}</Text>
                   </a>
                 </Dropdown>
               ) : (
                 <Link href="/login">
-                  <button className="btn btn-outline-primary">Login</button>
+                  <button className="btn btn-outline-primary">Войти</button>
                 </Link>
               )}
             </Fragment>
