@@ -11,7 +11,7 @@ const { Text } = Typography;
 const menu = (
   <Menu>
     <Menu.Item>
-      <Link href="/projects/add" rel="noopener noreferrer">
+      <Link href="/add" rel="noopener noreferrer">
         Добавить проект
       </Link>
     </Menu.Item>
